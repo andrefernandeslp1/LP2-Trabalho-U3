@@ -18,8 +18,10 @@ public class Funcionario extends Pessoa {
   public String getCargo(){ return cargo; }
 
   //setters
-  public void setMatricula(String matricula){ this.matricula = matricula; }
-  public void setCargo(String cargo){ this.cargo = cargo; }
+  public void setCargo(String cargo){
+    this.cargo = cargo;
+    this.matricula = gerarMatricula(super.getCpf(), cargo);
+  }
 
   //metodos
   public String gerarMatricula(String cpf, String cargo) {
