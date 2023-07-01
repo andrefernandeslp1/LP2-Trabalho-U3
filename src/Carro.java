@@ -30,6 +30,7 @@ public class Carro {
   public int getAno(){ return ano; }
   public String getChassi(){ return chassi; }
   public String getCombustivel(){ return combustivel; }
+  public Double getPreco(){ return preco; }
 
   //setters
   public void setMarca(String marca){ this.marca = marca; }
@@ -55,6 +56,5 @@ public class Carro {
   public void listarCarros(){
     System.out.println("Listando carros...");
   }
-  public Double getPreco(){ return preco; }
 
 }
