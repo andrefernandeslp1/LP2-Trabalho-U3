@@ -8,9 +8,9 @@ public class Cliente extends Pessoa {
   public Cliente() {
   }
 
-  public Cliente(String nome, String cpf, String cadastro, ArrayList<Carro> carrosComprados) {
+  public Cliente(String nome, String cpf, ArrayList<Carro> carrosComprados) {
     super(nome, cpf);
-    this.cadastro = cadastro;
+    this.cadastro = gerarCadastro(nome, cpf);
     this.carrosComprados = new ArrayList<Carro>();
   }
 
@@ -21,5 +21,11 @@ public class Cliente extends Pessoa {
   //setters
   public void setCadastro(String cadastro){ this.cadastro = cadastro; }
   public void setCarrosComprados(ArrayList<Carro> carrosComprados){ this.carrosComprados = carrosComprados; }
+
+  //metodos
+  public String gerarCadastro(String nome, String cpf) {
+    String cadastro = nome.substring(0, 3) + cpf.substring(0, 3);
+    return cadastro;
+  }
 
 }

@@ -8,17 +8,19 @@ public class Carro {
   private int ano;
   private String chassi;
   private String combustivel;
+  private double preco;
 
   public Carro() {
   }
 
-  public Carro(String marca, String modelo, String cor, int ano, String chassi, String combustivel) {
+  public Carro(String marca, String modelo, String cor, int ano, String chassi, String combustivel, double preco) {
     this.marca = marca;
     this.modelo = modelo;
     this.cor = cor;
     this.ano = ano;
     this.chassi = chassi;
     this.combustivel = combustivel;
+    this.preco = preco;
   }
 
   //getters
@@ -53,6 +55,6 @@ public class Carro {
   public void listarCarros(){
     System.out.println("Listando carros...");
   }
-
+  public Double getPreco(){ return preco; }
 
 }
