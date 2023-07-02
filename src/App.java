@@ -37,7 +37,7 @@ public class App {
               System.out.println("3 - Excluir Funcionário");
               System.out.println("4 - Consultar Funcionário");
               System.out.println("5 - Listar Funcionários");
-              System.out.println("6 - Sair");
+              System.out.println("6 - Voltar");
               opcao2 = input.nextInt();
 
               switch (opcao2) {
@@ -76,7 +76,7 @@ public class App {
             System.out.println("Escolha uma opção:");
             System.out.println("1 - Comprar Carro");
             System.out.println("2 - Vender Carro");
-            System.out.println("3 - Sair");
+            System.out.println("3 - Voltar");
             opcao2 = input.nextInt();
 
             switch (opcao2) {
