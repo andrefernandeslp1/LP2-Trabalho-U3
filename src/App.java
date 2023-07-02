@@ -28,7 +28,7 @@ public class App {
         opcao1 = input.nextInt();
 
         switch (opcao1) {
-          case 1: //recursos humanos
+          case 1: //RECURSOS HUMANOS
             do {
               System.out.println("Recursos Humanos");
               System.out.println("Escolha uma opção:");
@@ -67,11 +67,11 @@ public class App {
             } while (opcao2 != 6);
             break;
 
-          case 2: //clientes
+          case 2: //CLIENTES
             System.out.println("Clientes");
             break;
 
-          case 3: //compra e venda
+          case 3: //COMPRA E VENDA
             System.out.println("Compra e Venda");
             System.out.println("Escolha uma opção:");
             System.out.println("1 - Comprar Carro");
@@ -101,13 +101,13 @@ public class App {
             }
 
             break;
-          case 4: //estoque
+          case 4: //ESTOQUE
             System.out.println("Estoque");
             break;
-          case 5: //sair
+          case 5: //SAIR
             System.out.println("Saindo...");
             break;
-          default: //opcao invalida
+          default: //OPCAO INVALIDA
             System.out.println("Opção inválida!");
             break;
         }
