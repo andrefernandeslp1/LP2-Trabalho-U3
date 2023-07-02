@@ -28,7 +28,7 @@ public class App {
         opcao1 = input.nextInt();
 
         switch (opcao1) {
-          case 1:
+          case 1: //recursos humanos
             do {
               System.out.println("Recursos Humanos");
               System.out.println("Escolha uma opção:");
@@ -41,23 +41,23 @@ public class App {
               opcao2 = input.nextInt();
 
               switch (opcao2) {
-                case 1:
+                case 1: //cadastrar funcionario
                   System.out.println("Cadastrar Funcionário");
                   funcionarios.add(loja.cadastrarFuncionario());
                   break;
-                //case 2:
+                //case 2: //alterar funcionario
                   //System.out.println("Alterar Funcionário");
                   //break;
-                case 3:
+                case 3: //excluir funcionario
                   System.out.println("Excluir Funcionário");
                   break;
-                case 4:
+                case 4: //consultar funcionario
                   System.out.println("Consultar Funcionário");
                   break;
-                case 5:
+                case 5: //listar funcionarios
                   System.out.println("Listar Funcionários");
                   break;
-                case 6:
+                case 6: //sair
                   System.out.println("Saindo...");
                   break;
                 default:
@@ -67,11 +67,11 @@ public class App {
             } while (opcao2 != 6);
             break;
 
-          case 2:
+          case 2: //clientes
             System.out.println("Clientes");
             break;
 
-          case 3:
+          case 3: //compra e venda
             System.out.println("Compra e Venda");
             System.out.println("Escolha uma opção:");
             System.out.println("1 - Comprar Carro");
@@ -80,7 +80,7 @@ public class App {
             opcao2 = input.nextInt();
 
             switch (opcao2) {
-              case 1:
+              case 1: //comprar carro
                 System.out.println("Comprar Carro");
                 Carro car = carro.cadastrarCarro();
                 System.out.println("Digite a quantidade de carros que deseja comprar:");
@@ -88,26 +88,26 @@ public class App {
                 loja.comprarCarro(car, quantidade);
                 break;
 
-              case 2:
+              case 2: //vender carro
                 System.out.println("Vender Carro");
                 loja.venderCarro();
                 break;
-              case 3:
+              case 3: //sair
                 System.out.println("Saindo...");
                 break;
-              default:
+              default: //opcao invalida
                 System.out.println("Opção inválida!");
                 break;
             }
 
             break;
-          case 4:
+          case 4: //estoque
             System.out.println("Estoque");
             break;
-          case 5:
+          case 5: //sair
             System.out.println("Saindo...");
             break;
-          default:
+          default: //opcao invalida
             System.out.println("Opção inválida!");
             break;
         }
