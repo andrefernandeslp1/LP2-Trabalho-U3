@@ -26,13 +26,38 @@ public class Loja {
     }
   }
 
-  public void venderCarro(Carro carro, Cliente cliente){
-    this.carros.remove(carro);
-    this.clientes.add(cliente);
-    this.caixa += carro.getPreco();
+  public void venderCarro(){
+    System.out.println("Vendendo carro...");
+    System.out.println("Digite o CPF do cliente:");
+    String cpf = input.nextLine();
+    System.out.println("Digite o chassi do carro:");
+    String chassi = input.nextLine();
+    for(Cliente cliente : this.clientes){
+      if(cliente.getCpf().equals(cpf)){
+        for(Carro carro : this.carros){
+          if(carro.getChassi().equals(chassi)){
+            cliente.addCarroComprado(carro);
+            this.carros.remove(carro);
+            this.caixa += carro.getPreco();
+            System.out.println("Carro vendido com sucesso!");
+            return;
+          } else {
+            System.out.println("Carro não encontrado!");
+          }
+        }
+      } else {
+        System.out.println("Cliente não encontrado!");
+      }
+    }
   }
 
-  public void cadastrarCliente(Cliente cliente){
+  public void cadastrarCliente(){
+    System.out.println("Cadastrando cliente...");
+    System.out.println("Digite o nome do cliente:");
+    String nome = input.nextLine();
+    System.out.println("Digite o CPF do cliente:");
+    String cpf = input.nextLine();
+    Cliente cliente = new Cliente(nome, cpf);
     this.clientes.add(cliente);
   }
 

@@ -8,7 +8,7 @@ public class Cliente extends Pessoa {
   public Cliente() {
   }
 
-  public Cliente(String nome, String cpf, ArrayList<Carro> carrosComprados) {
+  public Cliente(String nome, String cpf) {
     super(nome, cpf);
     this.cadastro = gerarCadastro(nome, cpf);
     this.carrosComprados = new ArrayList<Carro>();
@@ -20,6 +20,7 @@ public class Cliente extends Pessoa {
 
   //setters
   public void setCadastro(String nome, String cpf){ this.cadastro = gerarCadastro(nome, cpf); }
+  public void addCarroComprado(Carro carro){ this.carrosComprados.add(carro); }
 
   //metodos
   public String gerarCadastro(String nome, String cpf) {

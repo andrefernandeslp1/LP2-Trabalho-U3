@@ -1,18 +1,21 @@
-import java.lang.reflect.Array;
 import java.util.*;
 
 public class App {
-  Loja loja = new Loja("Loja do João", 1000000.00);
 
   public static void main(String[] args) throws Exception {
       System.out.println("Hello, World!");
       Scanner input = new Scanner(System.in);
+      Loja loja = new Loja("Loja do João", 1000000.00);
+      ArrayList<Funcionario> funcionarios = new ArrayList<Funcionario>();
+      ArrayList<Cliente> clientes = new ArrayList<Cliente>();
+      ArrayList<Carro> carros = new ArrayList<Carro>();
+      int opcao1 = 0;
 
       do {
-        int opcao1 = 0;
+        opcao1 = 0;
         int opcao2 = 0;
 
-        System.out.println("Bem vindo ao SYSCAR! Sistema de Informação para Concessionárias de Automóveis");
+        System.out.println("Bem vindo ao SYSCAR! Sistema de Informações para Concessionárias de Automóveis");
         System.out.println("Escolha uma opção:");
         System.out.println("1 - Recursos Humanos");
         System.out.println("2 - Clientes");
@@ -27,7 +30,7 @@ public class App {
               System.out.println("Recursos Humanos");
               System.out.println("Escolha uma opção:");
               System.out.println("1 - Cadastrar Funcionário");
-              System.out.println("2 - Alterar Funcionário");
+              //System.out.println("2 - Alterar Funcionário");
               System.out.println("3 - Excluir Funcionário");
               System.out.println("4 - Consultar Funcionário");
               System.out.println("5 - Listar Funcionários");
@@ -36,13 +39,11 @@ public class App {
               switch (opcao2) {
                 case 1:
                   System.out.println("Cadastrar Funcionário");
-
-
-
+                  funcionarios.add(loja.cadastrarFuncionario());
                   break;
-                case 2:
-                  System.out.println("Alterar Funcionário");
-                  break;
+                //case 2:
+                  //System.out.println("Alterar Funcionário");
+                  //break;
                 case 3:
                   System.out.println("Excluir Funcionário");
                   break;
@@ -59,7 +60,7 @@ public class App {
                   System.out.println("Opção inválida!");
                   break;
               }
-            }
+            } while (opcao2 != 6);
 
 
             break;
@@ -81,7 +82,7 @@ public class App {
         }
 
 
-      } while (opcao != 5);
+      } while (opcao1 != 5);
 
       input.close();
 
