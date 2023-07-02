@@ -36,6 +36,7 @@ public class App {
               System.out.println("5 - Listar Funcionários");
               System.out.println("6 - Sair");
               opcao2 = input.nextInt();
+
               switch (opcao2) {
                 case 1:
                   System.out.println("Cadastrar Funcionário");
