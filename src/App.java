@@ -6,6 +6,9 @@ public class App {
       System.out.println("Hello, World!");
       Scanner input = new Scanner(System.in);
       Loja loja = new Loja("Loja do João", 1000000.00);
+      Carro carro = new Carro();
+      Cliente cliente = new Cliente();
+      Funcionario funcionario = new Funcionario();
       ArrayList<Funcionario> funcionarios = new ArrayList<Funcionario>();
       ArrayList<Cliente> clientes = new ArrayList<Cliente>();
       ArrayList<Carro> carros = new ArrayList<Carro>();
@@ -62,14 +65,41 @@ public class App {
                   break;
               }
             } while (opcao2 != 6);
-
-
             break;
+
           case 2:
             System.out.println("Clientes");
             break;
+
           case 3:
             System.out.println("Compra e Venda");
+            System.out.println("Escolha uma opção:");
+            System.out.println("1 - Comprar Carro");
+            System.out.println("2 - Vender Carro");
+            System.out.println("3 - Sair");
+            opcao2 = input.nextInt();
+
+            switch (opcao2) {
+              case 1:
+                System.out.println("Comprar Carro");
+                Carro car = carro.cadastrarCarro();
+                System.out.println("Digite a quantidade de carros que deseja comprar:");
+                int quantidade = input.nextInt();
+                loja.comprarCarro(car, quantidade);
+                break;
+
+              case 2:
+                System.out.println("Vender Carro");
+                loja.venderCarro();
+                break;
+              case 3:
+                System.out.println("Saindo...");
+                break;
+              default:
+                System.out.println("Opção inválida!");
+                break;
+            }
+
             break;
           case 4:
             System.out.println("Estoque");

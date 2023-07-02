@@ -9,6 +9,7 @@ public class Carro {
   private String chassi;
   private String combustivel;
   private double preco;
+  Scanner input = new Scanner(System.in);
 
   public Carro() {
   }
@@ -41,8 +42,24 @@ public class Carro {
   public void setCombustivel(String combustivel){ this.combustivel = combustivel; }
 
   //métodos
-  public void cadastrarCarro(){
+  public Carro cadastrarCarro(){
     System.out.println("Cadastrando carro...");
+    System.out.println("Digite a marca do carro:");
+    String marca = input.nextLine();
+    System.out.println("Digite o modelo do carro:");
+    String modelo = input.nextLine();
+    System.out.println("Digite a cor do carro:");
+    String cor = input.nextLine();
+    System.out.println("Digite o ano do carro:");
+    int ano = input.nextInt();
+    System.out.println("Digite o chassi do carro:");
+    String chassi = input.nextLine();
+    System.out.println("Digite o tipo de combustível do carro:");
+    String combustivel = input.nextLine();
+    System.out.println("Digite o preço do carro:");
+    double preco = input.nextDouble();
+    Carro carro = new Carro(marca, modelo, cor, ano, chassi, combustivel, preco);
+    return carro;
   }
   public void alterarCarro(){
     System.out.println("Alterando carro...");
