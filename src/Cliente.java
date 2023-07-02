@@ -19,8 +19,7 @@ public class Cliente extends Pessoa {
   public ArrayList<Carro> getCarrosComprados(){ return carrosComprados; }
 
   //setters
-  public void setCadastro(String cadastro){ this.cadastro = cadastro; }
-  public void setCarrosComprados(ArrayList<Carro> carrosComprados){ this.carrosComprados = carrosComprados; }
+  public void setCadastro(String nome, String cpf){ this.cadastro = gerarCadastro(nome, cpf); }
 
   //metodos
   public String gerarCadastro(String nome, String cpf) {

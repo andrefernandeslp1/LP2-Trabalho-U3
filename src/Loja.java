@@ -6,11 +6,12 @@ public class Loja {
   private ArrayList<Carro> carros;
   private ArrayList<Cliente> clientes;
   private ArrayList<Funcionario> funcionarios;
+  Scanner input = new Scanner(System.in);
 
   public Loja() {
   }
 
-  public Loja(String nome, Double caixa, ArrayList<Carro> carros, ArrayList<Cliente> clientes, ArrayList<Funcionario> funcionarios) {
+  public Loja(String nome, Double caixa) {
     this.nome = nome;
     this.caixa = caixa;
     this.carros = new ArrayList<Carro>();
@@ -35,8 +36,16 @@ public class Loja {
     this.clientes.add(cliente);
   }
 
-  public void cadastrarFuncionario(Funcionario funcionario){
-    this.funcionarios.add(funcionario);
+  public Funcionario cadastrarFuncionario(){
+    System.out.println("Cadastrando funcionário...");
+    System.out.println("Digite o nome do funcionário:");
+    String nome = input.nextLine();
+    System.out.println("Digite o CPF do funcionário:");
+    String cpf = input.nextLine();
+    System.out.println("Digite o cargo do funcionário:");
+    String cargo = input.nextLine();
+    Funcionario funcionario = new Funcionario(nome, cpf, cargo);
+    return funcionario;
   }
 
   public void listarCarros(){

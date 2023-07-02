@@ -7,7 +7,7 @@ public class Funcionario extends Pessoa {
   public Funcionario() {
   }
 
-  public Funcionario(String nome, String cpf, String cargo, double salario) {
+  public Funcionario(String nome, String cpf, String cargo) {
     super(nome, cpf);
     this.cargo = cargo;
     this.matricula = gerarMatricula(cpf, cargo);
