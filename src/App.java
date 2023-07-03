@@ -8,9 +8,6 @@ public class App {
       Carro carro = new Carro();
       Cliente cliente = new Cliente();
       Funcionario funcionario = new Funcionario();
-      List<Funcionario> funcionarios = new ArrayList<>();
-      List<Cliente> clientes = new ArrayList<>();
-      List<Carro> carros = new ArrayList<>();
       int opcao1 = 0;
 
       do {
@@ -42,7 +39,8 @@ public class App {
               switch (opcao2) {
                 case 1: //cadastrar funcionario
                   System.out.println("Cadastrar Funcionário");
-                  funcionarios.add(loja.cadastrarFuncionario());
+                  Funcionario func = loja.cadastrarFuncionario();
+                  loja.adicionarFuncionario(func);
                   break;
                 //case 2: //alterar funcionario
                   //System.out.println("Alterar Funcionário");

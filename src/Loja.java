@@ -19,6 +19,11 @@ public class Loja {
     this.funcionarios = new ArrayList<Funcionario>();
   }
 
+  //setters
+  public void adicionarFuncionario(Funcionario funcionario){
+    this.funcionarios.add(funcionario);
+  }
+
   public void abastecerEstoque(Carro carro, int quantidade){
     for(int i = 0; i < quantidade; i++){
 
