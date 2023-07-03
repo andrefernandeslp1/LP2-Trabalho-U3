@@ -52,8 +52,10 @@ public class Carro {
     String cor = input.nextLine();
     System.out.println("Digite o ano do carro:");
     int ano = input.nextInt();
-    System.out.println("Digite o chassi do carro:");
-    String chassi = input.nextLine();
+    input.nextLine();
+    //gerar chassi chassi aleatório
+    String chassi = UUID.randomUUID().toString();
+    carro.setChassi(chassi);
     System.out.println("Digite o tipo de combustível do carro:");
     String combustivel = input.nextLine();
     System.out.println("Digite o preço do carro:");

@@ -19,10 +19,11 @@ public class Loja {
     this.funcionarios = new ArrayList<Funcionario>();
   }
 
-  public void comprarCarro(Carro carro, int quantidade){
+  public void abastecerEstoque(Carro carro, int quantidade){
     for(int i = 0; i < quantidade; i++){
+
       this.carros.add(carro);
-      this.caixa -= carro.getPreco();
+      //this.caixa -= carro.getPreco();
     }
   }
 

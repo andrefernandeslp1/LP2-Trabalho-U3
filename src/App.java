@@ -79,12 +79,12 @@ public class App {
             opcao2 = input.nextInt();
 
             switch (opcao2) {
-              case 1: //comprar carro
+              case 1: //abastecer estoque
                 System.out.println("Comprar Carro");
                 Carro car = carro.cadastrarCarro();
                 System.out.println("Digite a quantidade de carros que deseja comprar:");
                 int quantidade = input.nextInt();
-                loja.comprarCarro(car, quantidade);
+                loja.abastecerEstoque(car, quantidade);
                 break;
 
               case 2: //vender carro
