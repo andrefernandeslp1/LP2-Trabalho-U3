@@ -99,6 +99,74 @@ public class App {
 
           case 2: //CLIENTES
             System.out.println("Clientes");
+            do {
+            System.out.println("Escolha uma opção:");
+            System.out.println("1 - Cadastrar Cliente");
+            System.out.println("2 - Consultar Cliente");
+            System.out.println("3 - Listar Clientes");
+            System.out.println("4 - Comprar carro");
+            System.out.println("5 - Voltar");
+              opcao2 = input.nextInt();
+
+              switch (opcao2) {
+                case 1: //cadastrar cliente
+                  System.out.println("Cadastrar Cliente");
+                  loja.cadastrarCliente();
+                  //String matri = funcionarios.get(0).getMatricula();
+                  //System.out.println(matri);
+                  break;
+
+                case 2: //consultar cliente
+                  System.out.println("Consultar Cliente");
+                  //input.nextLine();
+                  loja.demitirFuncionario();
+
+                  /*
+                  input.nextLine();
+                  System.out.println("Por favor digite a matrícula do Funcionário:");
+                  String matriculaRemover = input.nextLine();
+                  funcionarios.removeIf(funcionarioss -> funcionarioss.getMatricula().equals(matriculaRemover));
+                  //fazer tratamento pra se caso não tenha esse funcionário.
+                  System.out.println("Funcionário demitido!");
+                 //não estou conseguindo ver se estou conseguindo ou não fazer a exclusão do espaço desse funcionário.
+                  */
+                  break;
+
+                case 3: //listar clientes
+                  System.out.println("Listar Clientes");
+                  //input.nextLine();
+                  loja.consultarFuncionario();
+                  /*
+                  boolean funcionarioEncontrado = false;
+                  for (Funcionario funcionarioss : funcionarios) {
+                    if (funcionarioss.getMatricula().equals(matriculaConsultar)) {
+                      funcionarioEncontrado = true;
+                    }
+                    break;
+                  }
+
+                  if (funcionarioEncontrado) {
+                      System.out.println("Funcionário localizado.");
+                  } else {
+                      System.out.println("Funcionário não encontrado.");
+                  }
+                  */
+                  break;
+
+                case 4: //Comprar carro
+                  System.out.println("Comprar carro");
+                  loja.listarFuncionarios();
+                  break;
+
+                case 5: //sair
+                  System.out.println("Saindo...");
+                  break;
+
+                default:
+                  System.out.println("Opção inválida!");
+                  break;
+              }
+            } while (opcao2 != 5);
             break;
 
           case 3: //ABASTECIMENTO E VENDA

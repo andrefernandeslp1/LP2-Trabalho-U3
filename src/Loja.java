@@ -88,6 +88,7 @@ public class Loja {
     Cliente cliente = new Cliente(nome, cpf);
     this.clientes.add(cliente);
     System.out.println("Cliente cadastrado com sucesso!");
+    System.out.println("Número: " + cliente.getCadastro());
   }
 
   public void cadastrarFuncionario(){
