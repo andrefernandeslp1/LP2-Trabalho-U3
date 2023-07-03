@@ -10,13 +10,15 @@
 
 #### Alunos: André Augusto Fernandes / Edvaldo Dantas de Medeiros Júnior
 
-#
+# 
 
 #### 1. Introdução
 
 Este projeto foi desenvolvido para a disciplina de Linguagem de Programação II, como meio de avaliar os conhecimentos adquiridos pelo aluno ao longo da disciplina.
 
 Esta etapa do projeto consiste de uma entrega parcial do projeto, com apresentação do conceito e funcionalidades implementadas até o momento.
+
+### 
 
 ### 2. Objetivo
 
@@ -31,20 +33,23 @@ Os requisitos da avaliação (2ª Unidade) eram desenvolver uma aplicação em J
 7. Tratamento de Exceção;
 8. Coleções;
 
+### 
+
 ### 3. Proposta
 
 Para nosso projeto, criamos um sistema de informações para concessionárias de automóveis, no qual será possível administrar os departamentos de:
 
 * Recursos Humanos;
-  
+
 * Clientes;
-  
+
 * Estoques;
-  
+
 * Vendas.
-  
 
 Tais departamentos serão dispostos em forma de menus para o usuário do sistema, em que cada menu possuirá sub-menus para realizar operções específicas para cada área, como cadastrar clientes, cadastrar funcionários, abastecer estoque, realizar vendas, entre outras.
+
+### 
 
 ### 4. Instruções de Uso
 
@@ -64,22 +69,34 @@ O seguinte menu será exibido:
 
 ![Capturar](https://github.com/andrefernandeslp1/LP2-Trabalho-U3/assets/92834067/fc40627f-4846-4a50-8765-e603ba0655e2)
 
+A partir do menu acima, o usuário iniciará sua jornada pelo SYSCAR - Sistema de Informações para Concessionárias de Automóveis.
 
-A partir do menu acima, o usuário iniciará sua jornada pelo SYSCAR - Sistema de Informações para Concessionária de Automóveis.
+### 
 
 ### 5. Implementação
 
-O projeto possui a seguinte estrutura de classe:
+O projeto possui a seguinte estrutura de classes:
 
-![Captura de tela de 2023-07-03 16-02-22 - Copia](https://github.com/andrefernandeslp1/LP2-Trabalho-U3/assets/92834067/1d5ef57b-e184-48d9-88a6-dcf9f1c09756)
-
+<img title="" src="https://github.com/andrefernandeslp1/LP2-Trabalho-U3/assets/92834067/1d5ef57b-e184-48d9-88a6-dcf9f1c09756" alt="Captura de tela de 2023-07-03 16-02-22 - Copia" data-align="inline">
 
 * Pessoa: Pessoa é uma classe abstrata com atributos e métodos genéricos de uma pessoa física;
-  
-* Cliente, Funcionários: são classes herdeiras de Pessoa, com especializações próprias;
-  
-* Carro: classe que será utilizada para instanciar os automóveis da loja;
-  
-* Loja: classe utilizada para instanciar o objeto loja;
-  
+
+* Cliente, Funcionários: são classes herdeiras de Pessoa, com especializações próprias. Cliente possui uma coleção do tipo List<> para armazenar seus automóveis. Já funcionário, além de seus atributos especializados, possui também métodos próprios para fazer transações ordinárias da loja;
+
+* Carro: classe que será utilizada para instanciar os automóveis da loja e dos clientes.;
+
+* Loja: classe utilizada para instanciar o objeto loja. Loja possuirá coleções do tipo List<> para clientes, funcionários e carros, além de métodos para manipular seus atributos e coleções;
+
 * App: Classe que contem o main, no qual será executado o programa.
+
+
+
+### 6. Tecnologias utilizadas
+
+Para desenvolver o sistema foi utilizada a linguagem de programação Java e o editor de código VS Code.
+
+
+
+### 7. Conclusão
+
+O projeto está servindo de base para pra
