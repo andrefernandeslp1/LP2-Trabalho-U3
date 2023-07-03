@@ -3,6 +3,7 @@ import java.util.*;
 public class App {
 
   public static void main(String[] args) throws Exception {
+    //DOIDEIRA
       Scanner input = new Scanner(System.in);
       Loja loja = new Loja("Loja do João", 1000000.00);
       Carro carro = new Carro();
