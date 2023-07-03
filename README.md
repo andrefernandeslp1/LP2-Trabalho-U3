@@ -69,7 +69,7 @@ Para executar o programa, dirija-se ao diretório `/bin` e digite `java App` no 
 
 O seguinte menu será exibido:
 
-![Capturar](https://github.com/andrefernandeslp1/LP2-Trabalho-U3/assets/92834067/fc40627f-4846-4a50-8765-e603ba0655e2)
+![Capturar](https://github.com/andrefernandeslp1/LP2-Trabalho-U3/assets/92834067/e836f360-f15a-4075-9e6b-37f7dd4089c9)
 
 A partir do menu acima, o usuário iniciará sua jornada pelo SYSCAR - Sistema de Informações para Concessionárias de Automóveis.
 
