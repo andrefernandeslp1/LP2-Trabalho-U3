@@ -54,15 +54,7 @@ Para compilar o programa, foi criado um Makefile para facilitar o processo. Para
 
 Os arquivos serão compilados na estrutura padrão de diretórios de um projeto Java:
 
-├── Makefile
-####
-├── bin
-####
-│   └── (arquivos .class serão gerados aqui)
-####
-└── src
-####
-    └── (arquivos-fonte .java aqui)
+![Capturar2](https://github.com/andrefernandeslp1/LP2-Trabalho-U3/assets/92834067/5c67385d-e14c-498a-b6f3-1a69d157b5ca)
 
 #### 4.2. Execução
 
