@@ -8,8 +8,7 @@
 
 #### Docente: Francimar Carlos de Macêdo
 
-#### Alunos: André Augusto Fernandes
-####         Edvaldo Dantas de Medeiros Júnior
+#### Alunos: André Augusto Fernandes & Edvaldo Dantas de Medeiros Júnior
 
 #
 
