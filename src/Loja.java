@@ -3,9 +3,9 @@ import java.util.*;
 public class Loja {
   private String nome;
   private Double caixa;
-  private ArrayList<Carro> carros;
-  private ArrayList<Cliente> clientes;
-  private ArrayList<Funcionario> funcionarios;
+  private List<Carro> carros;
+  private List<Cliente> clientes;
+  private List<Funcionario> funcionarios;
   Scanner input = new Scanner(System.in);
 
   public Loja() {
