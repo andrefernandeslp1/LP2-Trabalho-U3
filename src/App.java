@@ -3,15 +3,14 @@ import java.util.*;
 public class App {
 
   public static void main(String[] args) throws Exception {
-      System.out.println("Hello, World!");
       Scanner input = new Scanner(System.in);
       Loja loja = new Loja("Loja do João", 1000000.00);
       Carro carro = new Carro();
       Cliente cliente = new Cliente();
       Funcionario funcionario = new Funcionario();
-      ArrayList<Funcionario> funcionarios = new ArrayList<Funcionario>();
-      ArrayList<Cliente> clientes = new ArrayList<Cliente>();
-      ArrayList<Carro> carros = new ArrayList<Carro>();
+      List<Funcionario> funcionarios = new ArrayList<>();
+      List<Cliente> clientes = new ArrayList<>();
+      List<Carro> carros = new ArrayList<>();
       int opcao1 = 0;
 
       do {
