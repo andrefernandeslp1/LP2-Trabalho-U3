@@ -5,10 +5,10 @@ public class App {
   public static void main(String[] args) throws Exception {
       Scanner input = new Scanner(System.in);
       Loja loja = new Loja("Loja do João", 1000000.00);
-      Carro carro = new Carro();
-      Cliente cliente = new Cliente();
-      Funcionario funcionario = new Funcionario();
-     
+      Carro carro = new Carro(); //CASO PRECISE ACESSAR ALGUM MÉTODO NESTA CLASSE
+      Cliente cliente = new Cliente(); //CASO PRECISE ACESSAR ALGUM MÉTODO NESTA CLASSE
+      Funcionario funcionario = new Funcionario(); //CASO PRECISE ACESSAR ALGUM MÉTODO NESTA CLASSE
+
       int opcao1 = 0;
 
       do {
@@ -39,14 +39,17 @@ public class App {
               switch (opcao2) {
                 case 1: //cadastrar funcionario
                   System.out.println("Cadastrar Funcionário");
-                  Funcionario func = loja.cadastrarFuncionario();
-                  loja.adicionarFuncionario(func);
-                  System.out.println("Funcionário Cadastrado!");
-                  String matri = funcionarios.get(0).getMatricula();
-                  System.out.println(matri);
+                  loja.cadastrarFuncionario();
+                  //String matri = funcionarios.get(0).getMatricula();
+                  //System.out.println(matri);
                   break;
+
                 case 2: //demitir funcionario
                   System.out.println("Demitir Funcionário");
+                  //input.nextLine();
+                  loja.demitirFuncionario();
+
+                  /*
                   input.nextLine();
                   System.out.println("Por favor digite a matrícula do Funcionário:");
                   String matriculaRemover = input.nextLine();
@@ -54,33 +57,39 @@ public class App {
                   //fazer tratamento pra se caso não tenha esse funcionário.
                   System.out.println("Funcionário demitido!");
                  //não estou conseguindo ver se estou conseguindo ou não fazer a exclusão do espaço desse funcionário.
+                  */
                   break;
+
                 case 3: //consultar funcionario
                   System.out.println("Consultar Funcionário");
-                  input.nextLine();
-                  System.out.println("Digite a matrícula do Funcionário que deseja encontrar.");
-                  String matriculaConsultar = input.nextLine();
-    
+                  //input.nextLine();
+                  loja.consultarFuncionario();
+                  /*
                   boolean funcionarioEncontrado = false;
                   for (Funcionario funcionarioss : funcionarios) {
                     if (funcionarioss.getMatricula().equals(matriculaConsultar)) {
                       funcionarioEncontrado = true;
-                break;
-        }
-    }
-    
-    if (funcionarioEncontrado) {
-        System.out.println("Funcionário localizado.");
-    } else {
-        System.out.println("Funcionário não encontrado.");
-    }
+                    }
+                    break;
+                  }
+
+                  if (funcionarioEncontrado) {
+                      System.out.println("Funcionário localizado.");
+                  } else {
+                      System.out.println("Funcionário não encontrado.");
+                  }
+                  */
                   break;
+
                 case 4: //listar funcionarios
                   System.out.println("Listar Funcionários");
+                  loja.listarFuncionarios();
                   break;
+
                 case 5: //sair
                   System.out.println("Saindo...");
                   break;
+
                 default:
                   System.out.println("Opção inválida!");
                   break;
@@ -102,11 +111,8 @@ public class App {
 
             switch (opcao2) {
               case 1: //abastecer estoque
-                System.out.println("Comprar Carro");
-                Carro car = carro.cadastrarCarro();
-                System.out.println("Digite a quantidade de carros que deseja comprar:");
-                int quantidade = input.nextInt();
-                loja.abastecerEstoque(car, quantidade);
+                System.out.println("Abastecer Estoque");
+                loja.cadastrarCarro();
                 break;
 
               case 2: //vender carro

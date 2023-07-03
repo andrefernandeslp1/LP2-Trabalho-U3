@@ -42,6 +42,7 @@ public class Carro {
   public void setCombustivel(String combustivel){ this.combustivel = combustivel; }
 
   //métodos
+  /*
   public Carro cadastrarCarro(){
     System.out.println("Cadastrando carro...");
     System.out.println("Digite a marca do carro:");
@@ -64,8 +65,6 @@ public class Carro {
         chassi += (char)(randomInt + 55);
       }
     }
-
-
     System.out.println("Chassi gerado: " + chassi);
     System.out.println("Digite o tipo de combustível do carro:");
     String combustivel = input.nextLine();
@@ -74,6 +73,7 @@ public class Carro {
     Carro carro = new Carro(marca, modelo, cor, ano, chassi, combustivel, preco);
     return carro;
   }
+  */
   public void alterarCarro(){
     System.out.println("Alterando carro...");
   }

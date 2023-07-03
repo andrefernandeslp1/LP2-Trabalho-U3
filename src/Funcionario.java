@@ -16,6 +16,8 @@ public class Funcionario extends Pessoa {
   //getters
   public String getMatricula(){ return matricula; }
   public String getCargo(){ return cargo; }
+  public String getNome(){ return super.getNome(); }
+  public String getCpf(){ return super.getCpf(); }
 
   //setters
   public void setCargo(String cargo){
