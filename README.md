@@ -57,6 +57,8 @@ Tais departamentos serão dispostos em forma de menus para o usuário do sistema
 
 Para compilar o programa, foi criado um Makefile para facilitar o processo. Para executá-lo, abra o Terminal na pasta raiz do projeto e execute o seguinte comando: `make -B`
 
+![Capturar3](https://github.com/andrefernandeslp1/LP2-Trabalho-U3/assets/92834067/39a83a30-4895-46ae-919e-7b0695be04fe)
+
 Os arquivos serão compilados na estrutura padrão de diretórios de um projeto Java:
 
 ![Capturar2](https://github.com/andrefernandeslp1/LP2-Trabalho-U3/assets/92834067/5c67385d-e14c-498a-b6f3-1a69d157b5ca)
