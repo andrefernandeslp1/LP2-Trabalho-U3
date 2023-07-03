@@ -1,4 +1,4 @@
-## Projeto: Sistema de Informações para Concessíonária de Automóveis desenvolvido em Java.
+## Projeto: Sistema de Informações para Concessionária de Automóveis desenvolvido em Java.
 
 ### UNIVERSIDADE FEDERAL DO RIO GRANDE DO NORTE – UFRN
 
