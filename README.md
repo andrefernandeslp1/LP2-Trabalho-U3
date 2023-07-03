@@ -4,15 +4,15 @@
 
 ### INSTITUTO METRÓPOLE DIGITAL – IMD
 
-#### DIM0116 - LINGUAGEM DE PROGRAMAÇÃO II
+### DIM0116 - LINGUAGEM DE PROGRAMAÇÃO II
 
-#### Docente: Francimar Carlos de Macêdo
+### Docente: Francimar Carlos de Macêdo
 
-#### Alunos: André Augusto Fernandes / Edvaldo Dantas de Medeiros Júnior
+### Alunos: André Augusto Fernandes & Edvaldo Dantas de Medeiros Júnior
 
 #
 
-#### 1. Introdução
+### 1. Introdução
 
 Este projeto foi desenvolvido para a disciplina de Linguagem de Programação II, como meio de avaliar os conhecimentos adquiridos pelo aluno ao longo da disciplina.
 
@@ -57,6 +57,8 @@ Tais departamentos serão dispostos em forma de menus para o usuário do sistema
 
 Para compilar o programa, foi criado um Makefile para facilitar o processo. Para executá-lo, abra o Terminal na pasta raiz do projeto e execute o seguinte comando: `make -B`
 
+![Capturar3](https://github.com/andrefernandeslp1/LP2-Trabalho-U3/assets/92834067/39a83a30-4895-46ae-919e-7b0695be04fe)
+
 Os arquivos serão compilados na estrutura padrão de diretórios de um projeto Java:
 
 ![Capturar2](https://github.com/andrefernandeslp1/LP2-Trabalho-U3/assets/92834067/5c67385d-e14c-498a-b6f3-1a69d157b5ca)
@@ -67,7 +69,7 @@ Para executar o programa, dirija-se ao diretório `/bin` e digite `java App` no 
 
 O seguinte menu será exibido:
 
-![Capturar](https://github.com/andrefernandeslp1/LP2-Trabalho-U3/assets/92834067/fc40627f-4846-4a50-8765-e603ba0655e2)
+![Capturar](https://github.com/andrefernandeslp1/LP2-Trabalho-U3/assets/92834067/e836f360-f15a-4075-9e6b-37f7dd4089c9)
 
 A partir do menu acima, o usuário iniciará sua jornada pelo SYSCAR - Sistema de Informações para Concessionárias de Automóveis.
 
