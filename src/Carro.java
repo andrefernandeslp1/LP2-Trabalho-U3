@@ -42,38 +42,6 @@ public class Carro {
   public void setCombustivel(String combustivel){ this.combustivel = combustivel; }
 
   //métodos
-  /*
-  public Carro cadastrarCarro(){
-    System.out.println("Cadastrando carro...");
-    System.out.println("Digite a marca do carro:");
-    String marca = input.nextLine();
-    System.out.println("Digite o modelo do carro:");
-    String modelo = input.nextLine();
-    System.out.println("Digite a cor do carro:");
-    String cor = input.nextLine();
-    System.out.println("Digite o ano do carro:");
-    int ano = input.nextInt();
-    input.nextLine();
-    //gerar chassi chassi aleatório de 17 numeros ou letras, todos uppercase
-    String chassi = "";
-    Random random = new Random();
-    for(int i = 0; i < 17; i++){
-      int randomInt = random.nextInt(36);
-      if(randomInt < 10){
-        chassi += randomInt;
-      } else {
-        chassi += (char)(randomInt + 55);
-      }
-    }
-    System.out.println("Chassi gerado: " + chassi);
-    System.out.println("Digite o tipo de combustível do carro:");
-    String combustivel = input.nextLine();
-    System.out.println("Digite o preço do carro:");
-    double preco = input.nextDouble();
-    Carro carro = new Carro(marca, modelo, cor, ano, chassi, combustivel, preco);
-    return carro;
-  }
-  */
   public void alterarCarro(){
     System.out.println("Alterando carro...");
   }
