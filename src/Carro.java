@@ -53,9 +53,20 @@ public class Carro {
     System.out.println("Digite o ano do carro:");
     int ano = input.nextInt();
     input.nextLine();
-    //gerar chassi chassi aleatório
-    String chassi = UUID.randomUUID().toString();
-    carro.setChassi(chassi);
+    //gerar chassi chassi aleatório de 17 numeros ou letras, todos uppercase
+    String chassi = "";
+    Random random = new Random();
+    for(int i = 0; i < 17; i++){
+      int randomInt = random.nextInt(36);
+      if(randomInt < 10){
+        chassi += randomInt;
+      } else {
+        chassi += (char)(randomInt + 55);
+      }
+    }
+
+
+    System.out.println("Chassi gerado: " + chassi);
     System.out.println("Digite o tipo de combustível do carro:");
     String combustivel = input.nextLine();
     System.out.println("Digite o preço do carro:");
