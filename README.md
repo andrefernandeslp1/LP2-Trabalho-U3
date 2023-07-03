@@ -4,15 +4,15 @@
 
 ### INSTITUTO METRÓPOLE DIGITAL – IMD
 
-#### DIM0116 - LINGUAGEM DE PROGRAMAÇÃO II
+### DIM0116 - LINGUAGEM DE PROGRAMAÇÃO II
 
-#### Docente: Francimar Carlos de Macêdo
+### Docente: Francimar Carlos de Macêdo
 
-#### Alunos: André Augusto Fernandes & Edvaldo Dantas de Medeiros Júnior
+### Alunos: André Augusto Fernandes & Edvaldo Dantas de Medeiros Júnior
 
 #
 
-#### 1. Introdução
+### 1. Introdução
 
 Este projeto foi desenvolvido para a disciplina de Linguagem de Programação II, como meio de avaliar os conhecimentos adquiridos pelo aluno ao longo da disciplina.
 
