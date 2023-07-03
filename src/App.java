@@ -8,6 +8,7 @@ public class App {
       Carro carro = new Carro();
       Cliente cliente = new Cliente();
       Funcionario funcionario = new Funcionario();
+     
       int opcao1 = 0;
 
       do {
@@ -18,7 +19,7 @@ public class App {
         System.out.println("Escolha uma opção:");
         System.out.println("1 - Recursos Humanos");
         System.out.println("2 - Clientes");
-        System.out.println("3 - Compra e Venda");
+        System.out.println("3 - Abastecimento e Venda");
         System.out.println("4 - Estoque");
         System.out.println("5 - Sair");
         opcao1 = input.nextInt();
@@ -29,11 +30,10 @@ public class App {
               System.out.println("Recursos Humanos");
               System.out.println("Escolha uma opção:");
               System.out.println("1 - Cadastrar Funcionário");
-              //System.out.println("2 - Alterar Funcionário");
-              System.out.println("3 - Excluir Funcionário");
-              System.out.println("4 - Consultar Funcionário");
-              System.out.println("5 - Listar Funcionários");
-              System.out.println("6 - Voltar");
+              System.out.println("2 - Demitir Funcionário");
+              System.out.println("3 - Consultar Funcionário");
+              System.out.println("4 - Listar Funcionários");
+              System.out.println("5 - Voltar");
               opcao2 = input.nextInt();
 
               switch (opcao2) {
@@ -41,37 +41,61 @@ public class App {
                   System.out.println("Cadastrar Funcionário");
                   Funcionario func = loja.cadastrarFuncionario();
                   loja.adicionarFuncionario(func);
+                  System.out.println("Funcionário Cadastrado!");
+                  String matri = funcionarios.get(0).getMatricula();
+                  System.out.println(matri);
                   break;
-                //case 2: //alterar funcionario
-                  //System.out.println("Alterar Funcionário");
-                  //break;
-                case 3: //excluir funcionario
-                  System.out.println("Excluir Funcionário");
+                case 2: //demitir funcionario
+                  System.out.println("Demitir Funcionário");
+                  input.nextLine();
+                  System.out.println("Por favor digite a matrícula do Funcionário:");
+                  String matriculaRemover = input.nextLine();
+                  funcionarios.removeIf(funcionarioss -> funcionarioss.getMatricula().equals(matriculaRemover));
+                  //fazer tratamento pra se caso não tenha esse funcionário.
+                  System.out.println("Funcionário demitido!");
+                 //não estou conseguindo ver se estou conseguindo ou não fazer a exclusão do espaço desse funcionário.
                   break;
-                case 4: //consultar funcionario
+                case 3: //consultar funcionario
                   System.out.println("Consultar Funcionário");
+                  input.nextLine();
+                  System.out.println("Digite a matrícula do Funcionário que deseja encontrar.");
+                  String matriculaConsultar = input.nextLine();
+    
+                  boolean funcionarioEncontrado = false;
+                  for (Funcionario funcionarioss : funcionarios) {
+                    if (funcionarioss.getMatricula().equals(matriculaConsultar)) {
+                      funcionarioEncontrado = true;
+                break;
+        }
+    }
+    
+    if (funcionarioEncontrado) {
+        System.out.println("Funcionário localizado.");
+    } else {
+        System.out.println("Funcionário não encontrado.");
+    }
                   break;
-                case 5: //listar funcionarios
+                case 4: //listar funcionarios
                   System.out.println("Listar Funcionários");
                   break;
-                case 6: //sair
+                case 5: //sair
                   System.out.println("Saindo...");
                   break;
                 default:
                   System.out.println("Opção inválida!");
                   break;
               }
-            } while (opcao2 != 6);
+            } while (opcao2 != 5);
             break;
 
           case 2: //CLIENTES
             System.out.println("Clientes");
             break;
 
-          case 3: //COMPRA E VENDA
-            System.out.println("Compra e Venda");
+          case 3: //ABASTECIMENTO E VENDA
+            System.out.println("Abastecimento e Venda");
             System.out.println("Escolha uma opção:");
-            System.out.println("1 - Comprar Carro");
+            System.out.println("1 - Abastecer Estoque");
             System.out.println("2 - Vender Carro");
             System.out.println("3 - Voltar");
             opcao2 = input.nextInt();
