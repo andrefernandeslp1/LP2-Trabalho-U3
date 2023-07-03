@@ -54,7 +54,11 @@ Para compilar o programa, foi criado um Makefile para facilitar o processo. Para
 
 Os arquivos serão compilados na estrutura padrão de diretórios de um projeto Java:
 
-├── Makefile├── bin│ └── (arquivos .class serão gerados aqui)└── src └── (arquivos-fonte .java aqui)
+├── Makefile
+├── bin
+│   └── (arquivos .class serão gerados aqui)
+└── src
+    └── (arquivos-fonte .java aqui)
 
 #### 4.2. Execução
 
