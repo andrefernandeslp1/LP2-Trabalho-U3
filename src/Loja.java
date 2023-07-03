@@ -19,7 +19,7 @@ public class Loja {
     this.funcionarios = new ArrayList<Funcionario>();
   }
 
-  //setters
+//setters
   public void adicionarFuncionario(Funcionario funcionario){
     this.funcionarios.add(funcionario);
   }
