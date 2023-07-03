@@ -10,7 +10,7 @@
 
 #### Alunos: André Augusto Fernandes / Edvaldo Dantas de Medeiros Júnior
 
-# 
+#
 
 #### 1. Introdução
 
@@ -18,7 +18,7 @@ Este projeto foi desenvolvido para a disciplina de Linguagem de Programação II
 
 Esta etapa do projeto consiste de uma entrega parcial do projeto, com apresentação do conceito e funcionalidades implementadas até o momento.
 
-### 
+###
 
 ### 2. Objetivo
 
@@ -33,7 +33,7 @@ Os requisitos da avaliação (2ª Unidade) eram desenvolver uma aplicação em J
 7. Tratamento de Exceção;
 8. Coleções;
 
-### 
+###
 
 ### 3. Proposta
 
@@ -49,7 +49,7 @@ Para nosso projeto, criamos um sistema de informações para concessionárias de
 
 Tais departamentos serão dispostos em forma de menus para o usuário do sistema, em que cada menu possuirá sub-menus para realizar operções específicas para cada área, como cadastrar clientes, cadastrar funcionários, abastecer estoque, realizar vendas, entre outras.
 
-### 
+###
 
 ### 4. Instruções de Uso
 
@@ -71,7 +71,7 @@ O seguinte menu será exibido:
 
 A partir do menu acima, o usuário iniciará sua jornada pelo SYSCAR - Sistema de Informações para Concessionárias de Automóveis.
 
-### 
+###
 
 ### 5. Implementação
 
@@ -99,4 +99,4 @@ Para desenvolver o sistema foi utilizada a linguagem de programação Java e o e
 
 ### 7. Conclusão
 
-O projeto está servindo de base para pra
+O projeto se encontra em estágio avançado de desenvolvimento e, até o momento, foi possível aplicar os conceitos de classes e objetos, herança, classes abstratas, interfaces, composição, polimorfismo, tratamento de exceção e coleções.
