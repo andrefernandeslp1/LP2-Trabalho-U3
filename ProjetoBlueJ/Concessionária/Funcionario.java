@@ -3,27 +3,31 @@ import java.util.*;
 public class Funcionario extends Pessoa {
   private String matricula;
   private String cargo;
-  private double salario;
 
   public Funcionario() {
   }
 
-  public Funcionario(String nome, String cpf, String matricula, String cargo, double salario) {
+  public Funcionario(String nome, String cpf, String cargo) {
     super(nome, cpf);
-    this.matricula = matricula;
     this.cargo = cargo;
-    this.salario = salario;
+    this.matricula = gerarMatricula(cpf, cargo);
   }
 
   //getters
   public String getMatricula(){ return matricula; }
   public String getCargo(){ return cargo; }
-  public double getSalario(){ return salario; }
+  public String getNome(){ return super.getNome(); }
+  public String getCpf(){ return super.getCpf(); }
 
   //setters
-  public void setMatricula(String matricula){ this.matricula = matricula; }
-  public void setCargo(String cargo){ this.cargo = cargo; }
-  public void setSalario(double salario){ this.salario = salario; }
+  public void setCargo(String cargo){
+    this.cargo = cargo;
+    this.matricula = gerarMatricula(super.getCpf(), cargo);
+  }
 
-
+  //metodos
+  public String gerarMatricula(String cpf, String cargo) {
+    String matricula = cpf.substring(0, 3) + cargo.substring(0, 3);
+    return matricula;
+  }
 }
