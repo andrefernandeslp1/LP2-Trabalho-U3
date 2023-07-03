@@ -53,7 +53,7 @@ Tais departamentos serão dispostos em forma de menus para o usuário do sistema
 
 ### 4. Instruções de Uso
 
-#### 4.1. Compilação
+### 4.1. Compilação
 
 Para compilar o programa, foi criado um Makefile para facilitar o processo. Para executá-lo, abra o Terminal na pasta raiz do projeto e execute o seguinte comando: `make -B`
 
@@ -61,7 +61,7 @@ Os arquivos serão compilados na estrutura padrão de diretórios de um projeto 
 
 ![Capturar2](https://github.com/andrefernandeslp1/LP2-Trabalho-U3/assets/92834067/5c67385d-e14c-498a-b6f3-1a69d157b5ca)
 
-#### 4.2. Execução
+### 4.2. Execução
 
 Para executar o programa, dirija-se ao diretório `/bin` e digite `java App` no prompt de comando.
 
