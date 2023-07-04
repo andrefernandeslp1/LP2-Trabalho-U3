@@ -3,7 +3,7 @@ import java.util.*;
 public class Cliente extends Pessoa {
   //informações exclusivas para cliente
   private String cadastro;
-  private List<Carro> carrosComprados;
+  private ArrayList<Carro> carrosComprados;
 
   public Cliente() {
   }
@@ -18,7 +18,7 @@ public class Cliente extends Pessoa {
   public String getCadastro(){ return cadastro; }
   public String getNome(){ return super.getNome(); }
   public String getCpf(){ return super.getCpf(); }
-  public List<Carro> getCarrosComprados(){ return carrosComprados; }
+  public ArrayList<Carro> getCarrosComprados(){ return carrosComprados; }
 
   //setters
   public void setCadastro(String nome, String cpf){ this.cadastro = gerarCadastro(nome, cpf); }
