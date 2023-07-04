@@ -20,6 +20,10 @@ public class Loja {
   }
 
 //setters
+  //! SOBRESCRITA DE MÉTODO (POLIMORFISMO)
+  public void abastecerEstoque(Carro carro){
+    this.carros.add(carro);
+  }
   public void abastecerEstoque(Carro carro, int quantidade){
     for(int i = 0; i < quantidade; i++){
       this.carros.add(carro);
@@ -78,6 +82,9 @@ public class Loja {
       }
     }
   }
+  public void adicionarCliente(Cliente cliente){
+    this.clientes.add(cliente);
+  }
 //funcionario que está cadastrando
   public void cadastrarCliente(){
     if(this.funcionarios.isEmpty()){
@@ -124,6 +131,10 @@ public class Loja {
     System.out.println("Cliente cadastrado com sucesso!");
     System.out.println("Número de cadastro: " + cliente.getCadastro());
     */
+  }
+
+  public void adicionarFuncionario(Funcionario funcionario){
+    this.funcionarios.add(funcionario);
   }
 
   public void cadastrarFuncionario(){
@@ -272,6 +283,34 @@ public class Loja {
           return;
         } else {
           System.out.println("Funcionário não encontrado!");
+        }
+      }
+    }
+  }
+
+  public void consultarCarro(){
+    System.out.println("Consultando carro...");
+    if(this.carros.isEmpty()){
+      System.out.println("Não há carros cadastrados!");
+      return;
+    } else {
+      System.out.println("Digite o modelo do carro que deseja encontrar.");
+      String modeloConsultar = input.nextLine();
+      System.out.println("Listando carros...");
+      for(Carro carro : this.carros){
+        if(carro.getModelo().equals(modeloConsultar)){
+          System.out.println("Carro localizado!");
+          System.out.println("Marca: " + carro.getMarca());
+          System.out.println("Modelo: " + carro.getModelo());
+          System.out.println("Cor: " + carro.getCor());
+          System.out.println("Ano: " + carro.getAno());
+          System.out.println("Chassi: " + carro.getChassi());
+          System.out.println("Combustível: " + carro.getCombustivel());
+          System.out.println("Preço: " + carro.getPreco());
+          System.out.println("\n");
+          return;
+        } else {
+          System.out.println("Carro não encontrado!");
         }
       }
     }

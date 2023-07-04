@@ -9,6 +9,16 @@ public class App {
       Cliente cliente = new Cliente(); //CASO PRECISE ACESSAR ALGUM MÉTODO NESTA CLASSE
       Funcionario funcionario = new Funcionario(); //CASO PRECISE ACESSAR ALGUM MÉTODO NESTA CLASSE
 
+      //criar uma instância de carro para abastecer o estoque
+      Carro carro1 = new Carro("Fiat", "Uno", "Branco", 2010, "123456789", "Gasolina", 10000.00);
+      loja.abastecerEstoque(carro1);
+      //criar uma instância de funcionário para adicionar ao ArrayList de funcionários
+      Funcionario funcionario1 = new Funcionario("PEDRO", "123456789", "Gerente");
+      loja.adicionarFuncionario(funcionario1);
+      //criar uma instância de cliente para adicionar ao ArrayList de clientes
+      Cliente cliente1 = new Cliente("MARIA", "987654321");
+      loja.adicionarCliente(cliente1);
+
       int opcao1 = 0;
 
       do {
@@ -172,6 +182,38 @@ public class App {
             break;
           case 4: //ESTOQUE
             System.out.println("Estoque");
+            System.out.println("Escolha uma opção:");
+            System.out.println("1 - Consultar Carro");
+            System.out.println("2 - Listar Carros");
+            System.out.println("3 - Voltar");
+
+            try {
+              opcao2 = input.nextInt();
+            } catch (InputMismatchException e) {
+              opcao2 = 0;
+              System.out.println("Opção inválida!");
+              input.nextLine();
+            }
+
+            switch (opcao2) {
+              case 1: //consultar carro
+                System.out.println("Consultar Carro");
+                loja.consultarCarro();
+                break;
+
+              case 2: //listar carros
+                System.out.println("Listar Carros");
+                loja.listarCarros();
+                break;
+
+              case 3: //sair
+                System.out.println("Saindo...");
+                break;
+
+              default: //opcao invalida
+                System.out.println("Opção inválida!");
+                break;
+            }
             break;
           case 5: //SAIR
             System.out.println("Saindo...");
