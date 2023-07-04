@@ -16,7 +16,8 @@ public class Cliente extends Pessoa {
 
   //getters
   public String getCadastro(){ return cadastro; }
-  public String getNome(){ return nome; }
+  public String getNome(){ return super.getNome(); }
+  public String getCpf(){ return super.getCpf(); }
   public List<Carro> getCarrosComprados(){ return carrosComprados; }
 
   //setters

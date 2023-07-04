@@ -205,13 +205,12 @@ public class Loja {
         if(cliente.getCadastro().equals(cadastroConsultar)){
           System.out.println("Cliente localizado!");
           System.out.println("Nome: " + cliente.getNome());
-          System.out.println("Matrícula: " + funcionario.getMatricula());
-          System.out.println("CPF: " + funcionario.getCpf());
-          System.out.println("Cargo: " + funcionario.getCargo());
+          System.out.println("Cadastro: " + cliente.getCadastro());
+          System.out.println("CPF: " + cliente.getCpf());
           System.out.println("\n");
           return;
         } else {
-          System.out.println("Funcionário não encontrado!");
+          System.out.println("Cliente não encontrado!");
         }
       }
     }
