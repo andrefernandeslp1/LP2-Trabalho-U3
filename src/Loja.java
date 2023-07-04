@@ -57,29 +57,45 @@ public class Loja {
   public String getNome() {
     return nome;
   }
-
   public Double getCaixa() {
     return caixa;
   }
-
   public ArrayList<Carro> getCarros() {
     return this.carros;
   }
-
   public ArrayList<Cliente> getClientes() {
     return this.clientes;
   }
-
   public ArrayList<Funcionario> getFuncionarios() {
     return this.funcionarios;
   }
 
   public void venderCarro() {
+    if (this.carros.isEmpty()) {
+      System.out.println("Não há carros em Estoque!");
+      return;
+    }
+    if (this.clientes.isEmpty()) {
+      System.out.println("Não há clientes cadastrados!");
+      return;
+    }
     System.out.println("Vendendo carro...");
     System.out.println("Digite o CPF do cliente:");
     String cpf = input.nextLine();
+    if(verificarCliente(cpf)){
+      System.out.println("Cliente localizado!");
+    } else {
+      System.out.println("Cliente não encontrado!");
+      return;
+    }
     System.out.println("Digite o chassi do carro:");
     String chassi = input.nextLine();
+    if(verificarChassi(chassi)){
+      System.out.println("Carro localizado!");
+    } else {
+      System.out.println("Carro não encontrado!");
+      return;
+    }
     for (Cliente cliente : this.clientes) {
       if (cliente.getCpf().equals(cpf)) {
         for (Carro carro : this.carros) {
@@ -93,10 +109,26 @@ public class Loja {
             System.out.println("Carro não encontrado!");
           }
         }
-      } else {
-        System.out.println("Cliente não encontrado!");
       }
     }
+  }
+
+  public boolean verificarCliente(String cpf) {
+    for (Cliente cliente : this.clientes) {
+      if (cliente.getCpf().equals(cpf)) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  public boolean verificarChassi(String chassi) {
+    for (Carro carro : this.carros) {
+      if (carro.getChassi().equals(chassi)) {
+        return true;
+      }
+    }
+    return false;
   }
 
 public void adicionarCliente2(Cliente cliente){
@@ -118,7 +150,7 @@ public void adicionarCliente2(Cliente cliente){
           System.out.println("Cargo: " + funcionario.getCargo());
           System.out.println("Cadastrando cliente...");
           funcionario.adicionarCliente(clientes);
-          
+
           return;
         } else {
           System.out.println("Funcionário não encontrado!");
@@ -220,7 +252,7 @@ public void adicionarCliente2(Cliente cliente){
         System.out.println("Chassi: " + carro.getChassi());
         System.out.println("Combustível: " + carro.getCombustivel());
         System.out.println("Preço: " + carro.getPreco());
-        System.out.println("\n");
+        System.out.println("");
       }
     }
 
@@ -235,11 +267,12 @@ public void adicionarCliente2(Cliente cliente){
       for (Cliente cliente : this.clientes) {
         System.out.println("Nome: " + cliente.getNome());
         System.out.println("CPF: " + cliente.getCpf());
+        System.out.println("Cadastro: " + cliente.getCadastro());
         System.out.println("Carros comprados: ");
         // tem que por uma verificação pra conferir se o cliente possui carro ou não
         if (cliente.getCarrosComprados().isEmpty()) {
           System.out.println("Este cliente não possui carros comprados!");
-          System.out.println("\n");
+          System.out.println("");
         } else {
           System.out.println("Este cliente possui os seguintes carros comprados:");
           for (Carro carro : cliente.getCarrosComprados()) {
@@ -250,7 +283,7 @@ public void adicionarCliente2(Cliente cliente){
             System.out.println("Chassi: " + carro.getChassi());
             System.out.println("Combustível: " + carro.getCombustivel());
             System.out.println("Preço: " + carro.getPreco());
-            System.out.println("\n");
+            System.out.println("");
           }
         }
       }
@@ -268,7 +301,7 @@ public void adicionarCliente2(Cliente cliente){
         System.out.println("Matrícula: " + funcionario.getMatricula());
         System.out.println("CPF: " + funcionario.getCpf());
         System.out.println("Cargo: " + funcionario.getCargo());
-        System.out.println("\n");
+        System.out.println("");
       }
     }
   }
@@ -279,20 +312,26 @@ public void adicionarCliente2(Cliente cliente){
       System.out.println("Não há clientes cadastrados!");
       return;
     } else {
-      System.out.println("Digite o código de cadastro do cliente que deseja encontrar.");
-      String cadastroConsultar = input.nextLine();
-      System.out.println("Listando clientes...");
-      for (Cliente cliente : this.clientes) {
-        if (cliente.getCadastro().equals(cadastroConsultar)) {
-          System.out.println("Cliente localizado!");
-          System.out.println("Nome: " + cliente.getNome());
-          System.out.println("Cadastro: " + cliente.getCadastro());
-          System.out.println("CPF: " + cliente.getCpf());
-          System.out.println("\n");
-          return;
-        } 
-      }   
-          System.out.println("Cliente não encontrado!");
+      System.out.println("Digite o CPF do cliente que deseja encontrar.");
+      String cpfCliente = input.nextLine();
+      if(verificarCliente(cpfCliente)){
+        //System.out.println("Cliente localizado!");
+        for (Cliente cliente : this.clientes) {
+          if (cliente.getCpf().equals(cpfCliente)) {
+            System.out.println("Cliente localizado!");
+            System.out.println("Nome: " + cliente.getNome());
+            System.out.println("Cadastro: " + cliente.getCadastro());
+            System.out.println("CPF: " + cliente.getCpf());
+            System.out.println("");
+            return;
+          }
+        }
+      } else {
+        System.out.println("Cliente não encontrado!");
+        return;
+      }
+      //System.out.println("Listando clientes...");
+
     }
   }
 
@@ -312,7 +351,7 @@ public void adicionarCliente2(Cliente cliente){
           System.out.println("Matrícula: " + funcionario.getMatricula());
           System.out.println("CPF: " + funcionario.getCpf());
           System.out.println("Cargo: " + funcionario.getCargo());
-          System.out.println("\n");
+          System.out.println("");
           return;
         }
       }
@@ -339,7 +378,7 @@ public void adicionarCliente2(Cliente cliente){
           System.out.println("Chassi: " + carro.getChassi());
           System.out.println("Combustível: " + carro.getCombustivel());
           System.out.println("Preço: " + carro.getPreco());
-          System.out.println("\n");
+          System.out.println("");
         }
       }
       System.out.println("Carro não encontrado!");
