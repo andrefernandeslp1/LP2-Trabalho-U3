@@ -3,9 +3,9 @@ import java.util.*;
 public class Loja {
   private String nome;
   private Double caixa;
-  private List<Carro> carros;
-  private List<Cliente> clientes;
-  private List<Funcionario> funcionarios;
+  private ArrayList<Carro> carros;
+  private ArrayList<Cliente> clientes;
+  private ArrayList<Funcionario> funcionarios;
   Scanner input = new Scanner(System.in);
 
   public Loja() {
@@ -50,9 +50,9 @@ public class Loja {
   //GETTERS
   public String getNome() { return nome; }
   public Double getCaixa() { return caixa; }
-  public List<Carro> getCarros(){ return this.carros; }
-  public List<Cliente> getClientes(){ return this.clientes; }
-  public List<Funcionario> getFuncionarios(){ return this.funcionarios; }
+  public ArrayList<Carro> getCarros(){ return this.carros; }
+  public ArrayList<Cliente> getClientes(){ return this.clientes; }
+  public ArrayList<Funcionario> getFuncionarios(){ return this.funcionarios; }
 
   public void venderCarro(){
     System.out.println("Vendendo carro...");
@@ -78,7 +78,7 @@ public class Loja {
       }
     }
   }
-
+//funcionario que está cadastrando
   public void cadastrarCliente(){
     System.out.println("Cadastrando cliente...");
     System.out.println("Digite o nome do cliente:");
@@ -86,7 +86,7 @@ public class Loja {
     System.out.println("Digite o CPF do cliente:");
     String cpf = input.nextLine();
     Cliente cliente = new Cliente(nome, cpf);
-    this.clientes.add(cliente);
+    funcionarios.get(0).adicionarCliente(clientes, cliente);
     System.out.println("Cliente cadastrado com sucesso!");
     System.out.println("Número: " + cliente.getCadastro());
   }
@@ -188,6 +188,31 @@ public class Loja {
         System.out.println("CPF: " + funcionario.getCpf());
         System.out.println("Cargo: " + funcionario.getCargo());
         System.out.println("\n");
+      }
+    }
+  }
+
+  public void consultarCliente(){
+    System.out.println("Consultando cliente...");
+    if(this.clientes.isEmpty()){
+      System.out.println("Não há clientes cadastrados!");
+      return;
+    } else {
+      System.out.println("Digite o código de cadastro do cliente que deseja encontrar.");
+      String cadastroConsultar = input.nextLine();
+      System.out.println("Listando funcionários...");
+      for(Cliente cliente : this.clientes){
+        if(cliente.getCadastro().equals(cadastroConsultar)){
+          System.out.println("Cliente localizado!");
+          System.out.println("Nome: " + cliente.getNome());
+          System.out.println("Matrícula: " + funcionario.getMatricula());
+          System.out.println("CPF: " + funcionario.getCpf());
+          System.out.println("Cargo: " + funcionario.getCargo());
+          System.out.println("\n");
+          return;
+        } else {
+          System.out.println("Funcionário não encontrado!");
+        }
       }
     }
   }

@@ -13,6 +13,10 @@ public class Funcionario extends Pessoa {
     this.matricula = gerarMatricula(cpf, cargo);
   }
 
+  public void adicionarCliente(ArrayList<Cliente> clientes, Cliente cliente){
+    clientes.add(cliente);
+  }
+
   //getters
   public String getMatricula(){ return matricula; }
   public String getCargo(){ return cargo; }

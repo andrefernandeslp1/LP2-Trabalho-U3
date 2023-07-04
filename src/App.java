@@ -105,7 +105,7 @@ public class App {
 
                 case 2: //consultar cliente
                   System.out.println("Consultar Cliente");
-                  loja.demitirFuncionario();
+                  loja.consultarCliente();
                   break;
 
                 case 3: //listar clientes
