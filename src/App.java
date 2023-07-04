@@ -26,6 +26,7 @@ public class App {
         try {
           opcao1 = input.nextInt();
         } catch (InputMismatchException e) {
+          opcao1 = 0;
           System.out.println("Opção inválida!");
           input.nextLine();
         }
@@ -44,6 +45,7 @@ public class App {
               try {
                 opcao2 = input.nextInt();
               } catch (InputMismatchException e) {
+                opcao2 = 0;
                 System.out.println("Opção inválida!");
                 input.nextLine();
               }
@@ -87,12 +89,13 @@ public class App {
               System.out.println("1 - Cadastrar Cliente");
               System.out.println("2 - Consultar Cliente");
               System.out.println("3 - Listar Clientes");
-              System.out.println("4 - Comprar carro");
+              System.out.println("4 - ???");
               System.out.println("5 - Voltar");
 
               try {
                 opcao2 = input.nextInt();
               } catch (InputMismatchException e) {
+                opcao2 = 0;
                 System.out.println("Opção inválida!");
                 input.nextLine();
               }
@@ -114,9 +117,10 @@ public class App {
                   break;
 
                 case 4: //Comprar carro
-                  System.out.println("Comprar carro");
+                  System.out.println("Opção indisponível!");
+                  //System.out.println("Comprar carro");
                   //falta implementar essa função
-                  loja.comprarCarro();
+                  //loja.comprarCarro();
                   break;
 
                 case 5: //sair
@@ -140,6 +144,7 @@ public class App {
             try {
               opcao2 = input.nextInt();
             } catch (InputMismatchException e) {
+              opcao2 = 0;
               System.out.println("Opção inválida!");
               input.nextLine();
             }

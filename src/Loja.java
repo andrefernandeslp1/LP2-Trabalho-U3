@@ -80,15 +80,53 @@ public class Loja {
   }
 //funcionario que está cadastrando
   public void cadastrarCliente(){
+    if(this.funcionarios.isEmpty()){
+      System.out.println("Não há funcionários cadastrados!");
+      return;
+    } else {
+      System.out.println("Digite a matrícula do funcionário que está cadastrando o cliente:");
+      String matricula = input.nextLine();
+      for(Funcionario funcionario : this.funcionarios){
+        if(funcionario.getMatricula().equals(matricula)){
+          System.out.println("Funcionário localizado!");
+          System.out.println("Nome: " + funcionario.getNome());
+          //System.out.println("Matrícula: " + funcionario.getMatricula());
+          //System.out.println("CPF: " + funcionario.getCpf());
+          System.out.println("Cargo: " + funcionario.getCargo());
+          System.out.println("\n");
+          System.out.println("Cadastrando cliente...");
+          System.out.println("Digite o nome do cliente:");
+          String nome = input.nextLine();
+          System.out.println("Digite o CPF do cliente:");
+          String cpf = input.nextLine();
+          Cliente cliente = new Cliente(nome, cpf);
+          funcionario.adicionarCliente(clientes, cliente);
+          System.out.println("Cliente cadastrado com sucesso!");
+          System.out.println("Número de cadastro: " + cliente.getCadastro());
+          return;
+        } else {
+          System.out.println("Funcionário não encontrado!");
+        }
+      }
+    }
+    /*
     System.out.println("Cadastrando cliente...");
     System.out.println("Digite o nome do cliente:");
     String nome = input.nextLine();
     System.out.println("Digite o CPF do cliente:");
     String cpf = input.nextLine();
     Cliente cliente = new Cliente(nome, cpf);
-    funcionarios.get(0).adicionarCliente(clientes, cliente);
+    try{
+      funcionarios.get(0).adicionarCliente(clientes, cliente);
+    } catch (IndexOutOfBoundsException e){
+      System.out.println("Não há funcionários cadastrados para executar esta operação!");
+      System.out.println("Cadastre um funcionário e tente novamente.");
+      return;
+    }
+    //funcionarios.get(0).adicionarCliente(clientes, cliente);
     System.out.println("Cliente cadastrado com sucesso!");
     System.out.println("Número de cadastro: " + cliente.getCadastro());
+    */
   }
 
   public void cadastrarFuncionario(){
