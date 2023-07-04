@@ -340,7 +340,6 @@ public void adicionarCliente2(Cliente cliente){
           System.out.println("Combustível: " + carro.getCombustivel());
           System.out.println("Preço: " + carro.getPreco());
           System.out.println("\n");
-          return;
         }
       }
       System.out.println("Carro não encontrado!");
