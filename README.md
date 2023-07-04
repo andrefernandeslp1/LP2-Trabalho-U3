@@ -51,7 +51,7 @@ Tais departamentos serão dispostos em forma de menus para o usuário do sistema
 
 ###
 
-### 4. Instruções de Uso
+### 4. Instruções de Compilação e Execução/Uso
 
 ### 4.1. Compilação
 
@@ -113,7 +113,7 @@ Ao entrar em clientes, o usuário terá acesso às seguintes operações:
 
 ![Clientes](https://github.com/andrefernandeslp1/LP2-Trabalho-U3/assets/92834067/09c3c4be-77e1-4ebc-aa78-11763076bcc4)
 
-* Cadastrar Cliente: As informações do cliente serão passadas pelo usuário ao programa e, em seguida, serão colocadas em um objeto cliente, para então serem inseridas em uma lista no objeto loja.
+* Cadastrar Cliente: Aqui, o sistema irá solicitar ao usuário a matrícula do funcionário que está cadastrando o cliente, para que seja possível realizar a operação. O programa irá verificar a lista de funcionários da loja e, caso a matrícula fornecida não exista, o programa exibirá uma mensagem de erro. Caso a matrícula exista, o programa irá solicitar as informações do cliente e, em seguida, irá colocá-las em um objeto cliente, para então serem inseridas em uma lista no objeto loja.
 
 * Consultar Cliente: A instância de cliente cujo cadastro for fornecido pelo usuário será exibida na tela. Caso não exista um cliente com o CPF fornecido, o programa exibirá uma mensagem de erro.
 
@@ -156,11 +156,11 @@ O projeto possui a seguinte estrutura de classes:
 * App: Classe que contem o main, no qual será executado o programa.
 
 
-
 ### 6. Tecnologias utilizadas
 
 Para desenvolver o sistema foi utilizada a linguagem de programação Java e o editor de código VS Code.
 
+Para compilar o programa, foi utilizado o compilador javac e o make.
 
 
 ### 7. Conclusão
