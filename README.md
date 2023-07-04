@@ -55,7 +55,21 @@ Tais departamentos serão dispostos em forma de menus para o usuário do sistema
 
 ### 4.1. Compilação
 
-Para compilar o programa, foi criado um Makefile para facilitar o processo. Para executá-lo, abra o Terminal na pasta raiz do projeto e execute o seguinte comando: `make -B`
+Para compilar o programa Java na linha de comando, siga as etapas abaixo:
+
+1. Certifique-se de ter o Java Development Kit (JDK) instalado no seu sistema. Você pode verificar isso digitando `java -version` no prompt de comando. Se o JDK estiver instalado corretamente, você verá a versão do Java sendo exibida.
+
+2. Baixe os arquivos deste repositório para uma pasta local de sua preferência.
+
+3. Abra um prompt de comando ou terminal no seu sistema operacional.
+
+4. Navegue até o diretório raiz do projeto, onde se encontra o arquivo Makefile, e execute o seguinte comando: `make -B`
+
+   O comando acima irá compilar os arquivos .java e gerar os arquivos .class.
+
+   OBS: Caso o comando acima não funcione, tente executar o seguinte comando: `javac -d bin src/*.java`
+
+   A seguinte tela será exibida:
 
 ![Capturar3](https://github.com/andrefernandeslp1/LP2-Trabalho-U3/assets/92834067/39a83a30-4895-46ae-919e-7b0695be04fe)
 
@@ -73,7 +87,53 @@ O seguinte menu será exibido:
 
 A partir do menu acima, o usuário iniciará sua jornada pelo SYSCAR - Sistema de Informações para Concessionárias de Automóveis.
 
-###
+#### 4.2.1. `1 - Recursos Humanos`
+
+Ao entrar em recursos humanos, o usuário terá acesso às seguintes operações:
+
+# IMAGEM
+
+Aqui o usuário poderá:
+
+* Cadastrar Funcionário: As informações do funcionário serão passadas pelo usuário ao programa e, em seguida, serão colocadas em um objeto funcionário, para então serem inseridas em uma lista no objeto loja.
+
+* Demitir Funcionário: A instância de funcionário cuja matrícula for fornecida pelo usuário será excluído da lista funcionários em loja.
+
+* Consultar Funcionário: A instância de funcionário cuja matrícula for fornecida pelo usuário será exibida na tela. Caso não exista um funcionário com a matrícula fornecida, o programa exibirá uma mensagem de erro.
+
+* Listar Funcionários: Todos os funcionários cadastrados serão exibidos na tela. Caso não exista nenhum funcionário cadastrado, o programa exibirá uma mensagem de erro.
+
+#### 4.2.2. `2 - Clientes`
+
+Ao entrar em clientes, o usuário terá acesso às seguintes operações:
+
+# IMAGEM
+
+* Cadastrar Cliente: As informações do cliente serão passadas pelo usuário ao programa e, em seguida, serão colocadas em um objeto cliente, para então serem inseridas em uma lista no objeto loja.
+
+* Consultar Cliente: A instância de cliente cujo cadastro for fornecido pelo usuário será exibida na tela. Caso não exista um cliente com o CPF fornecido, o programa exibirá uma mensagem de erro.
+
+* Listar Clientes: Todos os clientes cadastrados serão exibidos na tela. Caso não exista nenhum cliente cadastrado, o programa exibirá uma mensagem de erro.
+
+#### 4.2.3. `3 - Abastecimento e Vendas`
+
+Ao entrar em abastecimento e vendas, o usuário terá acesso às seguintes operações:
+
+# IMAGEM
+
+* Abastecer Estoque: O usuário poderá abastecer o estoque da loja com novos automóveis. As informações do automóvel serão passadas pelo usuário ao programa e, em seguida, serão colocadas em um objeto carro, para então serem inseridas em uma lista no objeto loja.
+
+* Vender Automóvel: O usuário poderá vender um automóvel para um cliente. O programa irá solicitar o CPF do cliente e a placa do automóvel. Caso o cliente não exista, o programa exibirá uma mensagem de erro. Caso o automóvel não exista, o programa exibirá uma mensagem de erro. Por fim, o programa irá exibir uma mensagem de sucesso e o automóvel será removido da lista de automóveis da loja e adicionado à lista de automóveis do cliente.
+
+#### 4.2.4. `4 - Estoque`
+
+Ao entrar em estoque, o usuário terá acesso às seguintes operações:
+
+# IMAGEM
+
+* Consultar Automóvel: O usuário poderá consultar um automóvel pelo seu modelo. Caso o automóvel não exista, o programa exibirá uma mensagem de erro. Caso o automóvel exista, o programa exibirá as informações do automóvel.
+
+* Listar Automóveis: Todos os automóveis cadastrados serão exibidos na tela. Caso não exista nenhum automóvel cadastrado, o programa exibirá uma mensagem de erro.
 
 ### 5. Implementação
 
