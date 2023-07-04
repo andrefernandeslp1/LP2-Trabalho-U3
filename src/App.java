@@ -110,12 +110,13 @@ public class App {
 
                 case 3: //listar clientes
                   System.out.println("Listar Clientes");
-                  loja.consultarFuncionario();
+                  loja.listarClientes();
                   break;
 
                 case 4: //Comprar carro
                   System.out.println("Comprar carro");
-                  loja.listarFuncionarios();
+                  //falta implementar essa função
+                  loja.comprarCarro();
                   break;
 
                 case 5: //sair
@@ -179,7 +180,6 @@ public class App {
       } while (opcao1 != 5);
 
       input.close();
-
       return;
   }
 }
