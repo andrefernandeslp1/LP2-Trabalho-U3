@@ -91,7 +91,7 @@ A partir do menu acima, o usuário iniciará sua jornada pelo SYSCAR - Sistema d
 
 Ao entrar em recursos humanos, o usuário terá acesso às seguintes operações:
 
-# IMAGEM
+![Recursos-Humanos](https://github.com/andrefernandeslp1/LP2-Trabalho-U3/assets/92834067/505ae205-076a-4fd3-bb3e-9bbd04393b91)
 
 Aqui o usuário poderá:
 
@@ -107,7 +107,7 @@ Aqui o usuário poderá:
 
 Ao entrar em clientes, o usuário terá acesso às seguintes operações:
 
-# IMAGEM
+![Clientes](https://github.com/andrefernandeslp1/LP2-Trabalho-U3/assets/92834067/09c3c4be-77e1-4ebc-aa78-11763076bcc4)
 
 * Cadastrar Cliente: As informações do cliente serão passadas pelo usuário ao programa e, em seguida, serão colocadas em um objeto cliente, para então serem inseridas em uma lista no objeto loja.
 
@@ -119,7 +119,7 @@ Ao entrar em clientes, o usuário terá acesso às seguintes operações:
 
 Ao entrar em abastecimento e vendas, o usuário terá acesso às seguintes operações:
 
-# IMAGEM
+![abast-e-vendas](https://github.com/andrefernandeslp1/LP2-Trabalho-U3/assets/92834067/fc87a8e7-830e-4592-a0ba-ec1cb420aee0)
 
 * Abastecer Estoque: O usuário poderá abastecer o estoque da loja com novos automóveis. As informações do automóvel serão passadas pelo usuário ao programa e, em seguida, serão colocadas em um objeto carro, para então serem inseridas em uma lista no objeto loja.
 
@@ -129,7 +129,7 @@ Ao entrar em abastecimento e vendas, o usuário terá acesso às seguintes opera
 
 Ao entrar em estoque, o usuário terá acesso às seguintes operações:
 
-# IMAGEM
+![Estoque](https://github.com/andrefernandeslp1/LP2-Trabalho-U3/assets/92834067/6a415291-2e2c-4fed-ada6-ef092fcc7211)
 
 * Consultar Automóvel: O usuário poderá consultar um automóvel pelo seu modelo. Caso o automóvel não exista, o programa exibirá uma mensagem de erro. Caso o automóvel exista, o programa exibirá as informações do automóvel.
 
