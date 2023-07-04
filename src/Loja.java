@@ -99,8 +99,8 @@ public class Loja {
     }
   }
 
-  public void adicionarCliente(Cliente cliente) {
-    this.clientes.add(cliente);
+public void adicionarCliente2(Cliente cliente){
+    clientes.add(cliente);
   }
 
   // funcionario que está cadastrando
@@ -117,14 +117,8 @@ public class Loja {
           System.out.println("Nome: " + funcionario.getNome());
           System.out.println("Cargo: " + funcionario.getCargo());
           System.out.println("Cadastrando cliente...");
-          System.out.println("Digite o nome do cliente:");
-          String nome = input.nextLine();
-          System.out.println("Digite o CPF do cliente:");
-          String cpf = input.nextLine();
-          Cliente cliente = new Cliente(nome, cpf);
-          funcionario.adicionarCliente(clientes, cliente);
-          System.out.println("Cliente cadastrado com sucesso!");
-          System.out.println("Número de cadastro: " + cliente.getCadastro());
+          funcionario.adicionarCliente(clientes);
+          
           return;
         } else {
           System.out.println("Funcionário não encontrado!");
@@ -180,6 +174,7 @@ public class Loja {
     String cor = input.nextLine();
     System.out.println("Digite o ano do carro:");
     int ano = input.nextInt();
+    input.nextLine();
     // input.nextLine();
     System.out.println("Digite o tipo de combustível do carro:");
     String combustivel = input.nextLine();
@@ -244,7 +239,7 @@ public class Loja {
         // tem que por uma verificação pra conferir se o cliente possui carro ou não
         if (cliente.getCarrosComprados().isEmpty()) {
           System.out.println("Este cliente não possui carros comprados!");
-          return;
+          System.out.println("\n");
         } else {
           System.out.println("Este cliente possui os seguintes carros comprados:");
           for (Carro carro : cliente.getCarrosComprados()) {
@@ -286,7 +281,7 @@ public class Loja {
     } else {
       System.out.println("Digite o código de cadastro do cliente que deseja encontrar.");
       String cadastroConsultar = input.nextLine();
-      System.out.println("Listando funcionários...");
+      System.out.println("Listando clientes...");
       for (Cliente cliente : this.clientes) {
         if (cliente.getCadastro().equals(cadastroConsultar)) {
           System.out.println("Cliente localizado!");
@@ -295,10 +290,9 @@ public class Loja {
           System.out.println("CPF: " + cliente.getCpf());
           System.out.println("\n");
           return;
-        } else {
+        } 
+      }   
           System.out.println("Cliente não encontrado!");
-        }
-      }
     }
   }
 
@@ -320,10 +314,9 @@ public class Loja {
           System.out.println("Cargo: " + funcionario.getCargo());
           System.out.println("\n");
           return;
-        } else {
-          System.out.println("Funcionário não encontrado!");
         }
       }
+      System.out.println("Funcionário não encontrado!");
     }
   }
 
@@ -348,10 +341,9 @@ public class Loja {
           System.out.println("Preço: " + carro.getPreco());
           System.out.println("\n");
           return;
-        } else {
-          System.out.println("Carro não encontrado!");
         }
       }
+      System.out.println("Carro não encontrado!");
     }
   }
 }

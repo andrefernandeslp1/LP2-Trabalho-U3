@@ -18,7 +18,7 @@ public class App {
     loja.adicionarFuncionario(funcionario1);
     // criar uma instância de cliente para adicionar ao ArrayList de clientes
     Cliente cliente1 = new Cliente("MARIA", "987654321");
-    loja.adicionarCliente(cliente1);
+    loja.adicionarCliente2(cliente1);
 
     int opcao1 = 0;
 
@@ -138,6 +138,8 @@ public class App {
           break;
 
         case 3: // ABASTECIMENTO E VENDA
+         
+        do{
           System.out.println("Abastecimento e Venda");
           System.out.println("Escolha uma opção:");
           System.out.println("1 - Abastecer Estoque");
@@ -171,9 +173,11 @@ public class App {
               System.out.println("Opção inválida!");
               break;
           }
-
+        }while (opcao2 != 3);
           break;
         case 4: // ESTOQUE
+          
+        do{
           System.out.println("Estoque");
           System.out.println("Escolha uma opção:");
           System.out.println("1 - Consultar Carro");
@@ -207,6 +211,7 @@ public class App {
               System.out.println("Opção inválida!");
               break;
           }
+        }while(opcao2 != 3);
           break;
         case 5: // SAIR
           System.out.println("Saindo...");

@@ -3,7 +3,7 @@ import java.util.*;
 public class Funcionario extends Pessoa {
   private String matricula;
   private String cargo;
-
+Scanner input = new Scanner(System.in);
   public Funcionario() {
   }
 
@@ -13,8 +13,15 @@ public class Funcionario extends Pessoa {
     this.matricula = gerarMatricula(cpf, cargo);
   }
 
-  public void adicionarCliente(ArrayList<Cliente> clientes, Cliente cliente){
-    clientes.add(cliente);
+  public void adicionarCliente(ArrayList<Cliente> clientes2){
+    System.out.println("Digite o nome do cliente:");
+          String nome = input.nextLine();
+          System.out.println("Digite o CPF do cliente:");
+          String cpf = input.nextLine();
+          Cliente cliente = new Cliente(nome, cpf);
+    clientes2.add(cliente);
+    System.out.println("Cliente cadastrado com sucesso!");
+          System.out.println("Número de cadastro: " + cliente.getCadastro());
   }
 
   //getters
