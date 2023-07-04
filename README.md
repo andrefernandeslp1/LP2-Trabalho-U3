@@ -57,7 +57,11 @@ Tais departamentos serão dispostos em forma de menus para o usuário do sistema
 
 Para compilar o programa Java na linha de comando, siga as etapas abaixo:
 
-1. Certifique-se de ter o Java Development Kit (JDK) instalado no seu sistema. Você pode verificar isso digitando `java -version` no prompt de comando. Se o JDK estiver instalado corretamente, você verá a versão do Java sendo exibida.
+1. Certifique-se de ter o Java Development Kit (JDK) instalado no seu sistema. Você pode verificar isso digitando `java -version` no prompt de comando. Se o JDK estiver instalado corretamente, você verá a versão do Java sendo exibida. Certifique-se também que o make está instalado no seu sistema. Você pode verificar isso digitando `make -v` no prompt de comando. Se o make estiver instalado corretamente, você verá a versão do make sendo exibida. Caso o JDK ou o make não estejam instalados, você pode instalá-los através dos links abaixo:
+
+   * [JDK](https://www.oracle.com/br/java/technologies/javase/javase-jdk8-downloads.html)
+
+   * [make](http://gnuwin32.sourceforge.net/packages/make.htm)
 
 2. Baixe os arquivos deste repositório para uma pasta local de sua preferência.
 
