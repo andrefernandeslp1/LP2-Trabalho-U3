@@ -20,6 +20,7 @@ public class Loja {
   }
 
 //setters
+  //! ACHO QUE NÃO ESTÁ SENDO USADO
   public void abastecerEstoque(Carro carro, int quantidade){
     for(int i = 0; i < quantidade; i++){
       this.carros.add(carro);
