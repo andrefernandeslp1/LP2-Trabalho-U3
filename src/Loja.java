@@ -20,7 +20,6 @@ public class Loja {
   }
 
 //setters
-  //! ACHO QUE NÃO ESTÁ SENDO USADO
   public void abastecerEstoque(Carro carro, int quantidade){
     for(int i = 0; i < quantidade; i++){
       this.carros.add(carro);
@@ -89,7 +88,7 @@ public class Loja {
     Cliente cliente = new Cliente(nome, cpf);
     funcionarios.get(0).adicionarCliente(clientes, cliente);
     System.out.println("Cliente cadastrado com sucesso!");
-    System.out.println("Número: " + cliente.getCadastro());
+    System.out.println("Número de cadastro: " + cliente.getCadastro());
   }
 
   public void cadastrarFuncionario(){
@@ -145,7 +144,7 @@ public class Loja {
     }
     return chassi;
   }
-
+//usar na classe estoque.
   public void listarCarros(){
     for(Carro carro : this.carros){
       System.out.println("Marca: " + carro.getMarca());
@@ -164,6 +163,7 @@ public class Loja {
       System.out.println("Nome: " + cliente.getNome());
       System.out.println("CPF: " + cliente.getCpf());
       System.out.println("Carros comprados: ");
+      //tem que por uma verificação pra conferir se o cliente possui carro ou não
       for(Carro carro : cliente.getCarrosComprados()){
         System.out.println("Marca: " + carro.getMarca());
         System.out.println("Modelo: " + carro.getModelo());
