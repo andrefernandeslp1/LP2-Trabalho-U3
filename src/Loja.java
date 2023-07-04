@@ -90,10 +90,7 @@ public class Loja {
         if(funcionario.getMatricula().equals(matricula)){
           System.out.println("Funcionário localizado!");
           System.out.println("Nome: " + funcionario.getNome());
-          //System.out.println("Matrícula: " + funcionario.getMatricula());
-          //System.out.println("CPF: " + funcionario.getCpf());
           System.out.println("Cargo: " + funcionario.getCargo());
-          System.out.println("\n");
           System.out.println("Cadastrando cliente...");
           System.out.println("Digite o nome do cliente:");
           String nome = input.nextLine();
