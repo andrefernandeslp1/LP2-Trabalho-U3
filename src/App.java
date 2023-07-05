@@ -12,8 +12,7 @@ public class App {
     // criar uma instância de carro para abastecer o estoque
     Carro carro1 = new Carro("Fiat", "Uno", "Branco", 2010, "123456789", "Gasolina", 10000.00);
     loja.abastecerEstoque(carro1);
-    // criar uma instância de funcionário para adicionar ao ArrayList de
-    // funcionários
+    // criar uma instância de funcionário para adicionar ao ArrayList de funcionários
     Funcionario funcionario1 = new Funcionario("PEDRO", "123456789", "Gerente");
     loja.adicionarFuncionario(funcionario1);
     // criar uma instância de cliente para adicionar ao ArrayList de clientes
@@ -138,7 +137,7 @@ public class App {
           break;
 
         case 3: // ABASTECIMENTO E VENDA
-         
+
         do{
           System.out.println("Abastecimento e Venda");
           System.out.println("Escolha uma opção:");
@@ -176,7 +175,7 @@ public class App {
         }while (opcao2 != 3);
           break;
         case 4: // ESTOQUE
-          
+
         do{
           System.out.println("Estoque");
           System.out.println("Escolha uma opção:");
