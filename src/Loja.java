@@ -33,23 +33,35 @@ public class Loja {
 
   public void demitirFuncionario() {
     if (this.funcionarios.isEmpty()) {
-      System.out.println("Não há funcionários cadastrados!");
+      System.out.println("\nNão há funcionários cadastrados!");
       return;
     } else {
-      System.out.println("Por favor digite a matrícula do Funcionário:");
+      System.out.println("\nPor favor digite a matrícula do Funcionário:");
       String matriculaRemover = input.nextLine();
-      System.out.println("Demitindo funcionário...");
-      for (Funcionario funcionario : this.funcionarios) {
-        if (funcionario.getMatricula().equals(matriculaRemover)) {
-          this.funcionarios.remove(funcionario);
-          System.out.println("Funcionário demitido com sucesso!");
-          return;
-        } else {
-          System.out.println("Funcionário não encontrado!");
+      if(verificarFuncionario(matriculaRemover)){
+        System.out.println("\nFuncionário localizado!");
+        System.out.println("Demitindo funcionário...");
+        for (Funcionario funcionario : this.funcionarios) {
+          if (funcionario.getMatricula().equals(matriculaRemover)) {
+            this.funcionarios.remove(funcionario);
+            System.out.println("Funcionário demitido com sucesso!");
+            return;
+          }
         }
+      } else {
+          System.out.println("\nFuncionário não encontrado!");
+          return;
       }
     }
+  }
 
+  public boolean verificarFuncionario(String matricula) {
+    for (Funcionario funcionario : this.funcionarios) {
+      if (funcionario.getMatricula().equals(matricula)) {
+        return true;
+      }
+    }
+    return false;
   }
 
   // GETTERS
@@ -71,14 +83,14 @@ public class Loja {
 
   public void venderCarro() {
     if (this.carros.isEmpty()) {
-      System.out.println("Não há carros em Estoque!");
+      System.out.println("\nNão há carros em Estoque!");
       return;
     }
     if (this.clientes.isEmpty()) {
-      System.out.println("Não há clientes cadastrados!");
+      System.out.println("\nNão há clientes cadastrados!");
       return;
     }
-    System.out.println("Vendendo carro...");
+    System.out.println("\nVendendo carro...");
     System.out.println("Digite o CPF do cliente:");
     String cpf = input.nextLine();
     if(verificarCliente(cpf)){
@@ -91,25 +103,24 @@ public class Loja {
     String chassi = input.nextLine();
     if(verificarChassi(chassi)){
       System.out.println("Carro localizado!");
+      for (Cliente cliente : this.clientes) {
+        if (cliente.getCpf().equals(cpf)) {
+          for (Carro carro : this.carros) {
+            if (carro.getChassi().equals(chassi)) {
+              cliente.addCarroComprado(carro);
+              this.carros.remove(carro);
+              this.caixa += carro.getPreco();
+              System.out.println("Carro vendido com sucesso!");
+              return;
+            }
+          }
+        }
+      }
     } else {
       System.out.println("Carro não encontrado!");
       return;
     }
-    for (Cliente cliente : this.clientes) {
-      if (cliente.getCpf().equals(cpf)) {
-        for (Carro carro : this.carros) {
-          if (carro.getChassi().equals(chassi)) {
-            cliente.addCarroComprado(carro);
-            this.carros.remove(carro);
-            this.caixa += carro.getPreco();
-            System.out.println("Carro vendido com sucesso!");
-            return;
-          } else {
-            System.out.println("Carro não encontrado!");
-          }
-        }
-      }
-    }
+
   }
 
   public boolean verificarCliente(String cpf) {
@@ -137,10 +148,10 @@ public void adicionarCliente2(Cliente cliente){
   // funcionario que está cadastrando
   public void cadastrarCliente() {
     if (this.funcionarios.isEmpty()) {
-      System.out.println("Não há funcionários cadastrados!");
+      System.out.println("\nNão há funcionários cadastrados!");
       return;
     } else {
-      System.out.println("Digite a matrícula do funcionário que está cadastrando o cliente:");
+      System.out.println("\nDigite a matrícula do funcionário que está cadastrando o cliente:");
       String matricula = input.nextLine();
       for (Funcionario funcionario : this.funcionarios) {
         if (funcionario.getMatricula().equals(matricula)) {
@@ -182,7 +193,7 @@ public void adicionarCliente2(Cliente cliente){
   }
 
   public void cadastrarFuncionario() {
-    System.out.println("Cadastrando funcionário...");
+    System.out.println("\nCadastrando funcionário...");
     System.out.println("Digite o nome do funcionário:");
     String nome = input.nextLine();
     System.out.println("Digite o CPF do funcionário:");
@@ -191,12 +202,12 @@ public void adicionarCliente2(Cliente cliente){
     String cargo = input.nextLine();
     Funcionario funcionario = new Funcionario(nome, cpf, cargo);
     this.funcionarios.add(funcionario);
-    System.out.println("Funcionário cadastrado com sucesso!");
+    System.out.println("\nFuncionário cadastrado com sucesso!");
     System.out.println("Matrícula: " + funcionario.getMatricula());
   }
 
   public void cadastrarCarro() {
-    System.out.println("Cadastrando carro...");
+    System.out.println("\nCadastrando carro...");
     System.out.println("Digite a marca do carro:");
     String marca = input.nextLine();
     System.out.println("Digite o modelo do carro:");
@@ -212,14 +223,18 @@ public void adicionarCliente2(Cliente cliente){
     System.out.println("Digite o preço do carro:");
     double preco = input.nextDouble();
     // gerar chassi chassi aleatório de 17 numeros ou letras, todos uppercase
-    String chassi = geradorDeChassi();
-    System.out.println("Chassi gerado: " + chassi);
-    Carro carro = new Carro(marca, modelo, cor, ano, chassi, combustivel, preco);
+    // String chassi = geradorDeChassi();
+    // System.out.println("Chassi gerado: " + chassi);
+    // Carro carro = new Carro(marca, modelo, cor, ano, chassi, combustivel, preco);
     System.out.println("Digite a quantidade de carros que deseja inserir no Estoque:");
     int quantidade = input.nextInt();
     for (int i = 0; i < quantidade; i++) {
+      String chassi = geradorDeChassi();
+      System.out.println("Chassi gerado: " + chassi);
+      Carro carro = new Carro(marca, modelo, cor, ano, chassi, combustivel, preco);
       this.carros.add(carro);
     }
+    System.out.println("\nCarro(s) cadastrado(s) com sucesso!");
   }
 
   public String geradorDeChassi() {
@@ -239,50 +254,51 @@ public void adicionarCliente2(Cliente cliente){
   // usar na classe estoque.
   public void listarCarros() {
     if (this.carros.isEmpty()) {
-      System.out.println("Não há carros cadastrados!");
+      System.out.println("\nNão há carros cadastrados!");
       return;
     } else {
-      System.out.println("Listando carros...");
+      System.out.println("\nListando carros...");
       for (Carro carro : this.carros) {
-        System.out.println("Marca: " + carro.getMarca());
+        System.out.println("\nMarca: " + carro.getMarca());
         System.out.println("Modelo: " + carro.getModelo());
         System.out.println("Cor: " + carro.getCor());
         System.out.println("Ano: " + carro.getAno());
         System.out.println("Chassi: " + carro.getChassi());
         System.out.println("Combustível: " + carro.getCombustivel());
         System.out.println("Preço: " + carro.getPreco());
-        System.out.println("");
+        //System.out.println("");
       }
+      System.out.println("\nTotal de carros em Estoque: " + this.carros.size());
     }
 
   }
 
   public void listarClientes() {
     if (this.clientes.isEmpty()) {
-      System.out.println("Não há clientes cadastrados!");
+      System.out.println("\nNão há clientes cadastrados!");
       return;
     } else {
-      System.out.println("Listando clientes...");
+      System.out.println("\nListando clientes...");
       for (Cliente cliente : this.clientes) {
-        System.out.println("Nome: " + cliente.getNome());
+        System.out.println("\nNome: " + cliente.getNome());
         System.out.println("CPF: " + cliente.getCpf());
         System.out.println("Cadastro: " + cliente.getCadastro());
         System.out.println("Carros comprados: ");
         // tem que por uma verificação pra conferir se o cliente possui carro ou não
         if (cliente.getCarrosComprados().isEmpty()) {
-          System.out.println("Este cliente não possui carros comprados!");
-          System.out.println("");
+          System.out.println("\nEste cliente não possui carros comprados!");
+          //System.out.println("");
         } else {
-          System.out.println("Este cliente possui os seguintes carros comprados:");
+          System.out.println("\nEste cliente possui os seguintes carros comprados:");
           for (Carro carro : cliente.getCarrosComprados()) {
-            System.out.println("Marca: " + carro.getMarca());
+            System.out.println("\nMarca: " + carro.getMarca());
             System.out.println("Modelo: " + carro.getModelo());
             System.out.println("Cor: " + carro.getCor());
             System.out.println("Ano: " + carro.getAno());
             System.out.println("Chassi: " + carro.getChassi());
             System.out.println("Combustível: " + carro.getCombustivel());
             System.out.println("Preço: " + carro.getPreco());
-            System.out.println("");
+            //System.out.println("");
           }
         }
       }
@@ -291,42 +307,42 @@ public void adicionarCliente2(Cliente cliente){
 
   public void listarFuncionarios() {
     if (this.funcionarios.isEmpty()) {
-      System.out.println("Não há funcionários cadastrados!");
+      System.out.println("\nNão há funcionários cadastrados!");
       return;
     } else {
-      System.out.println("Listando funcionários...");
+      System.out.println("\nListando funcionários...");
       for (Funcionario funcionario : this.funcionarios) {
-        System.out.println("Nome: " + funcionario.getNome());
+        System.out.println("\nNome: " + funcionario.getNome());
         System.out.println("Matrícula: " + funcionario.getMatricula());
         System.out.println("CPF: " + funcionario.getCpf());
         System.out.println("Cargo: " + funcionario.getCargo());
-        System.out.println("");
+        //System.out.println("");
       }
     }
   }
 
   public void consultarCliente() {
-    System.out.println("Consultando cliente...");
+    System.out.println("\nConsultando cliente...");
     if (this.clientes.isEmpty()) {
-      System.out.println("Não há clientes cadastrados!");
+      System.out.println("\nNão há clientes cadastrados!");
       return;
     } else {
-      System.out.println("Digite o CPF do cliente que deseja encontrar.");
+      System.out.println("\nDigite o CPF do cliente que deseja encontrar.");
       String cpfCliente = input.nextLine();
       if(verificarCliente(cpfCliente)){
         //System.out.println("Cliente localizado!");
         for (Cliente cliente : this.clientes) {
           if (cliente.getCpf().equals(cpfCliente)) {
-            System.out.println("Cliente localizado!");
+            System.out.println("\nCliente localizado!");
             System.out.println("Nome: " + cliente.getNome());
             System.out.println("Cadastro: " + cliente.getCadastro());
             System.out.println("CPF: " + cliente.getCpf());
-            System.out.println("");
+            //System.out.println("");
             return;
           }
         }
       } else {
-        System.out.println("Cliente não encontrado!");
+        System.out.println("\nCliente não encontrado!");
         return;
       }
       //System.out.println("Listando clientes...");
@@ -335,41 +351,42 @@ public void adicionarCliente2(Cliente cliente){
   }
 
   public void consultarFuncionario() {
-    System.out.println("Consultando funcionário...");
+    System.out.println("\nConsultando funcionário...");
     if (this.funcionarios.isEmpty()) {
-      System.out.println("Não há funcionários cadastrados!");
+      System.out.println("\nNão há funcionários cadastrados!");
       return;
     } else {
-      System.out.println("Digite a matrícula do Funcionário que deseja encontrar.");
+      System.out.println("\nDigite a matrícula do Funcionário que deseja encontrar.");
       String matriculaConsultar = input.nextLine();
-      System.out.println("Listando funcionários...");
+      System.out.println("\nListando funcionários...");
       for (Funcionario funcionario : this.funcionarios) {
         if (funcionario.getMatricula().equals(matriculaConsultar)) {
-          System.out.println("Funcionário localizado!");
-          System.out.println("Nome: " + funcionario.getNome());
+          System.out.println("\nFuncionário localizado!");
+          System.out.println("\nNome: " + funcionario.getNome());
           System.out.println("Matrícula: " + funcionario.getMatricula());
           System.out.println("CPF: " + funcionario.getCpf());
           System.out.println("Cargo: " + funcionario.getCargo());
-          System.out.println("");
+          //System.out.println("");
           return;
         }
       }
-      System.out.println("Funcionário não encontrado!");
+      System.out.println("\nFuncionário não encontrado!");
     }
   }
 
   public void consultarCarro() {
-    System.out.println("Consultando carro...");
+    int count = 0;
+    System.out.println("\nConsultando carro...");
     if (this.carros.isEmpty()) {
-      System.out.println("Não há carros cadastrados!");
+      System.out.println("\nNão há carros cadastrados!");
       return;
     } else {
-      System.out.println("Digite o modelo do carro que deseja encontrar.");
+      System.out.println("\nDigite o modelo do carro que deseja encontrar.");
       String modeloConsultar = input.nextLine();
-      System.out.println("Listando carros...");
+      System.out.println("\nListando carros...");
       for (Carro carro : this.carros) {
         if (carro.getModelo().equals(modeloConsultar)) {
-          System.out.println("Carro localizado!");
+          System.out.println("\nCarro localizado!");
           System.out.println("Marca: " + carro.getMarca());
           System.out.println("Modelo: " + carro.getModelo());
           System.out.println("Cor: " + carro.getCor());
@@ -377,10 +394,16 @@ public void adicionarCliente2(Cliente cliente){
           System.out.println("Chassi: " + carro.getChassi());
           System.out.println("Combustível: " + carro.getCombustivel());
           System.out.println("Preço: " + carro.getPreco());
-          System.out.println("");
+          //System.out.println("");
+          count++;
         }
       }
-      System.out.println("Carro não encontrado!");
+      if (count > 0) {
+        System.out.println("\nTotal de carros deste Modelo encontrados: " + count);
+      } else {
+        System.out.println("\nModelo não encontrado!");
+      }
+      //System.out.println("Carro não encontrado!");
     }
   }
 }

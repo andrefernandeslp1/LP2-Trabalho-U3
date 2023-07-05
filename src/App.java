@@ -21,12 +21,13 @@ public class App {
 
     int opcao1 = 0;
 
+    System.out.println("\nBem vindo ao SYSCAR! Sistema de Informações para Concessionárias de Automóveis");
+
     do {
       opcao1 = 0;
       int opcao2 = 0;
 
-      System.out.println("Bem vindo ao SYSCAR! Sistema de Informações para Concessionárias de Automóveis");
-      System.out.println("Escolha uma opção:");
+      System.out.println("\nEscolha uma opção:");
       System.out.println("1 - Recursos Humanos");
       System.out.println("2 - Clientes");
       System.out.println("3 - Abastecimento e Venda");
@@ -44,13 +45,13 @@ public class App {
       switch (opcao1) {
         case 1: // RECURSOS HUMANOS
           do {
-            System.out.println("Recursos Humanos");
-            System.out.println("Escolha uma opção:");
-            System.out.println("1 - Cadastrar Funcionário");
-            System.out.println("2 - Demitir Funcionário");
-            System.out.println("3 - Consultar Funcionário");
-            System.out.println("4 - Listar Funcionários");
-            System.out.println("5 - Voltar");
+            System.out.println("\n  Recursos Humanos");
+            System.out.println("  Escolha uma opção:");
+            System.out.println("  1 - Cadastrar Funcionário");
+            System.out.println("  2 - Demitir Funcionário");
+            System.out.println("  3 - Consultar Funcionário");
+            System.out.println("  4 - Listar Funcionários");
+            System.out.println("  5 - Voltar");
 
             try {
               opcao2 = input.nextInt();
@@ -92,14 +93,14 @@ public class App {
           } while (opcao2 != 5);
           break;
 
-        case 2: // CLIENTESs
-          System.out.println("Clientes");
+        case 2: // CLIENTES
           do {
-            System.out.println("Escolha uma opção:");
-            System.out.println("1 - Cadastrar Cliente");
-            System.out.println("2 - Consultar Cliente");
-            System.out.println("3 - Listar Clientes");
-            System.out.println("4 - Voltar");
+            System.out.println("\n  Clientes");
+            System.out.println("  Escolha uma opção:");
+            System.out.println("  1 - Cadastrar Cliente");
+            System.out.println("  2 - Consultar Cliente");
+            System.out.println("  3 - Listar Clientes");
+            System.out.println("  4 - Voltar");
 
             try {
               opcao2 = input.nextInt();
@@ -138,50 +139,50 @@ public class App {
 
         case 3: // ABASTECIMENTO E VENDA
 
-        do{
-          System.out.println("Abastecimento e Venda");
-          System.out.println("Escolha uma opção:");
-          System.out.println("1 - Abastecer Estoque");
-          System.out.println("2 - Vender Carro");
-          System.out.println("3 - Voltar");
+          do{
+            System.out.println("\n  Abastecimento e Venda");
+            System.out.println("  Escolha uma opção:");
+            System.out.println("  1 - Abastecer Estoque");
+            System.out.println("  2 - Vender Carro");
+            System.out.println("  3 - Voltar");
 
-          try {
-            opcao2 = input.nextInt();
-          } catch (InputMismatchException e) {
-            opcao2 = 0;
-            System.out.println("Opção inválida!");
-            input.nextLine();
-          }
-
-          switch (opcao2) {
-            case 1: // abastecer estoque
-              System.out.println("Abastecer Estoque");
-              loja.cadastrarCarro();
-              break;
-
-            case 2: // vender carro
-              System.out.println("Vender Carro");
-              loja.venderCarro();
-              break;
-
-            case 3: // sair
-              System.out.println("Saindo...");
-              break;
-
-            default: // opcao invalida
+            try {
+              opcao2 = input.nextInt();
+            } catch (InputMismatchException e) {
+              opcao2 = 0;
               System.out.println("Opção inválida!");
-              break;
-          }
-        }while (opcao2 != 3);
+              input.nextLine();
+            }
+
+            switch (opcao2) {
+              case 1: // abastecer estoque
+                System.out.println("Abastecer Estoque");
+                loja.cadastrarCarro();
+                break;
+
+              case 2: // vender carro
+                System.out.println("Vender Carro");
+                loja.venderCarro();
+                break;
+
+              case 3: // sair
+                System.out.println("Saindo...");
+                break;
+
+              default: // opcao invalida
+                System.out.println("Opção inválida!");
+                break;
+            }
+          }while (opcao2 != 3);
           break;
         case 4: // ESTOQUE
 
         do{
-          System.out.println("Estoque");
-          System.out.println("Escolha uma opção:");
-          System.out.println("1 - Consultar Carro");
-          System.out.println("2 - Listar Carros");
-          System.out.println("3 - Voltar");
+          System.out.println("\n  Estoque");
+          System.out.println("  Escolha uma opção:");
+          System.out.println("  1 - Consultar Carro");
+          System.out.println("  2 - Listar Carros");
+          System.out.println("  3 - Voltar");
 
           try {
             opcao2 = input.nextInt();
