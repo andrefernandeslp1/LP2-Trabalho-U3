@@ -285,22 +285,7 @@ public void adicionarCliente2(Cliente cliente){
         System.out.println("Cadastro: " + cliente.getCadastro());
         System.out.println("Carros comprados: ");
         // tem que por uma verificação pra conferir se o cliente possui carro ou não
-        if (cliente.getCarrosComprados().isEmpty()) {
-          System.out.println("\nEste cliente não possui carros comprados!");
-          //System.out.println("");
-        } else {
-          System.out.println("\nEste cliente possui os seguintes carros comprados:");
-          for (Carro carro : cliente.getCarrosComprados()) {
-            System.out.println("\nMarca: " + carro.getMarca());
-            System.out.println("Modelo: " + carro.getModelo());
-            System.out.println("Cor: " + carro.getCor());
-            System.out.println("Ano: " + carro.getAno());
-            System.out.println("Chassi: " + carro.getChassi());
-            System.out.println("Combustível: " + carro.getCombustivel());
-            System.out.println("Preço: " + carro.getPreco());
-            //System.out.println("");
-          }
-        }
+        listarCarrosCliente(cliente);
       }
     }
   }
@@ -338,6 +323,7 @@ public void adicionarCliente2(Cliente cliente){
             System.out.println("Cadastro: " + cliente.getCadastro());
             System.out.println("CPF: " + cliente.getCpf());
             //System.out.println("");
+            listarCarrosCliente(cliente);
             return;
           }
         }
@@ -347,6 +333,25 @@ public void adicionarCliente2(Cliente cliente){
       }
       //System.out.println("Listando clientes...");
 
+    }
+  }
+
+  public void listarCarrosCliente(Cliente cliente){
+    if (cliente.getCarrosComprados().isEmpty()) {
+      System.out.println("\nEste cliente não possui carros comprados!");
+      //System.out.println("");
+    } else {
+      System.out.println("\nEste cliente possui os seguintes carros comprados:");
+      for (Carro carro : cliente.getCarrosComprados()) {
+        System.out.println("\nMarca: " + carro.getMarca());
+        System.out.println("Modelo: " + carro.getModelo());
+        System.out.println("Cor: " + carro.getCor());
+        System.out.println("Ano: " + carro.getAno());
+        System.out.println("Chassi: " + carro.getChassi());
+        System.out.println("Combustível: " + carro.getCombustivel());
+        System.out.println("Preço: " + carro.getPreco());
+        //System.out.println("");
+      }
     }
   }
 
