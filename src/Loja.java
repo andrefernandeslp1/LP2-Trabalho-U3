@@ -222,12 +222,14 @@ public void adicionarCliente2(Cliente cliente){
     String combustivel = input.nextLine();
     System.out.println("Digite o preço do carro:");
     double preco = input.nextDouble();
+    input.nextLine();
     // gerar chassi chassi aleatório de 17 numeros ou letras, todos uppercase
     // String chassi = geradorDeChassi();
     // System.out.println("Chassi gerado: " + chassi);
     // Carro carro = new Carro(marca, modelo, cor, ano, chassi, combustivel, preco);
     System.out.println("Digite a quantidade de carros que deseja inserir no Estoque:");
     int quantidade = input.nextInt();
+    input.nextLine();
     for (int i = 0; i < quantidade; i++) {
       String chassi = geradorDeChassi();
       System.out.println("Chassi gerado: " + chassi);
@@ -242,6 +244,7 @@ public void adicionarCliente2(Cliente cliente){
     Random random = new Random();
     for (int i = 0; i < 17; i++) {
       int randomInt = random.nextInt(36);
+      input.nextLine();////!
       if (randomInt < 10) {
         chassi += randomInt;
       } else {

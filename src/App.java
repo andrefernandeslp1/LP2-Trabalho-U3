@@ -36,6 +36,7 @@ public class App {
 
       try {
         opcao1 = input.nextInt();
+        input.nextLine();
       } catch (InputMismatchException e) {
         opcao1 = 0;
         System.out.println("Opção inválida!");
@@ -55,6 +56,7 @@ public class App {
 
             try {
               opcao2 = input.nextInt();
+              input.nextLine();
             } catch (InputMismatchException e) {
               opcao2 = 0;
               System.out.println("Opção inválida!");
@@ -104,6 +106,7 @@ public class App {
 
             try {
               opcao2 = input.nextInt();
+              input.nextLine();
             } catch (InputMismatchException e) {
               opcao2 = 0;
               System.out.println("Opção inválida!");
@@ -148,6 +151,7 @@ public class App {
 
             try {
               opcao2 = input.nextInt();
+              input.nextLine();
             } catch (InputMismatchException e) {
               opcao2 = 0;
               System.out.println("Opção inválida!");
@@ -186,6 +190,7 @@ public class App {
 
           try {
             opcao2 = input.nextInt();
+            input.nextLine();
           } catch (InputMismatchException e) {
             opcao2 = 0;
             System.out.println("Opção inválida!");
