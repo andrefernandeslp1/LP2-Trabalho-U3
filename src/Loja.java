@@ -20,11 +20,10 @@ public class Loja {
   }
 
   // setters
-  // ! SOBRESCRITA DE MÉTODO (POLIMORFISMO)
+  //! POLIMORFISMO
   public void abastecerEstoque(Carro carro) {
     this.carros.add(carro);
   }
-
   public void abastecerEstoque(Carro carro, int quantidade) {
     for (int i = 0; i < quantidade; i++) {
       this.carros.add(carro);
