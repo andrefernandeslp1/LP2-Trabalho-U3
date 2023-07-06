@@ -2,6 +2,8 @@ import java.util.*;
 
 public class App {
 
+  //função para carregar objetos funcionarios
+
   public static void main(String[] args) throws Exception {
     Scanner input = new Scanner(System.in);
     Loja loja = new Loja("Loja do João", 1000000.00);
@@ -229,6 +231,10 @@ public class App {
     } while (opcao1 != 5);
 
     input.close();
+
+    //salvar objeto loja em arquivo json
+    loja.salvarLoja(loja);
+
     return;
   }
 }

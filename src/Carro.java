@@ -9,7 +9,7 @@ public class Carro {
   private String chassi;
   private String combustivel;
   private double preco;
-  Scanner input = new Scanner(System.in);
+  //Scanner input = new Scanner(System.in);
 
   public Carro() {
   }

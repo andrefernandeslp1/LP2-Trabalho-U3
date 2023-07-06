@@ -1,4 +1,8 @@
 import java.util.*;
+import java.io.FileWriter;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import java.io.IOException;
 
 public class Loja {
   private String nome;
@@ -6,7 +10,7 @@ public class Loja {
   private ArrayList<Carro> carros;
   private ArrayList<Cliente> clientes;
   private ArrayList<Funcionario> funcionarios;
-  Scanner input = new Scanner(System.in);
+  private transient Scanner input = new Scanner(System.in);
 
   public Loja() {
   }
@@ -413,5 +417,27 @@ public void adicionarCliente2(Cliente cliente){
       }
       //System.out.println("Carro não encontrado!");
     }
+  }
+
+  // função para objeto salvar loja em arquivo json
+  /*
+  public void salvarLoja(Loja loja) {
+    Gson gson = new Gson();
+    String json = gson.toJson(loja);
+    try {
+      FileWriter writer = new FileWriter("loja.json");
+      writer.write(json);
+      writer.close();
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+  }
+  */
+
+  public void salvarLoja(Loja loja) throws IOException {
+    Gson gson = new GsonBuilder().setPrettyPrinting().create();
+    FileWriter writer = new FileWriter("loja.json");
+    gson.toJson(loja, writer);
+    writer.close();
   }
 }

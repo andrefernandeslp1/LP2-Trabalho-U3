@@ -3,7 +3,8 @@ import java.util.*;
 public class Funcionario extends Pessoa {
   private String matricula;
   private String cargo;
-  Scanner input = new Scanner(System.in);
+  private transient Scanner input = new Scanner(System.in);
+
   public Funcionario() {
   }
 
