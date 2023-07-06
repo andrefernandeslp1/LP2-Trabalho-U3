@@ -232,6 +232,7 @@ public void adicionarCliente2(Cliente cliente){
     System.out.println("Digite a quantidade de carros que deseja inserir no Estoque:");
     int quantidade = input.nextInt();
     input.nextLine();
+    System.out.println("Quantidade: " + quantidade);
     for (int i = 0; i < quantidade; i++) {
       String chassi = geradorDeChassi();
       System.out.println("Chassi gerado: " + chassi);
@@ -243,14 +244,14 @@ public void adicionarCliente2(Cliente cliente){
 
   public String geradorDeChassi() {
     String chassi = "";
+    String letras = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    String numeros = "0123456789";
     Random random = new Random();
     for (int i = 0; i < 17; i++) {
-      int randomInt = random.nextInt(36);
-      input.nextLine();////!
-      if (randomInt < 10) {
-        chassi += randomInt;
+      if (i < 3) {
+        chassi += letras.charAt(random.nextInt(letras.length()));
       } else {
-        chassi += (char) (randomInt + 55);
+        chassi += numeros.charAt(random.nextInt(numeros.length()));
       }
     }
     return chassi;
