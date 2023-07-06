@@ -233,7 +233,7 @@ public class App {
     input.close();
 
     //salvar objeto loja em arquivo json
-    loja.salvarLoja(loja);
+    //loja.salvarLoja(loja);
 
     return;
   }
