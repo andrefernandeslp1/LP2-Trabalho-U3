@@ -147,6 +147,7 @@ public void adicionarCliente2(Cliente cliente){
 
   // funcionario que está cadastrando
   public void cadastrarCliente() {
+    int count = 0;
     if (this.funcionarios.isEmpty()) {
       System.out.println("\nNão há funcionários cadastrados!");
       return;
@@ -160,11 +161,12 @@ public void adicionarCliente2(Cliente cliente){
           System.out.println("Cargo: " + funcionario.getCargo());
           System.out.println("Cadastrando cliente...");
           funcionario.adicionarCliente(clientes);
-
+          count++;
           return;
-        } else {
-          System.out.println("Funcionário não encontrado!");
         }
+      }
+      if (count == 0) {
+        System.out.println("Funcionário não encontrado!");
       }
     }
     /*
