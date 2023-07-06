@@ -1,8 +1,4 @@
 import java.util.*;
-import java.io.FileWriter;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import java.io.IOException;
 
 public class Loja {
   private String nome;
@@ -434,10 +430,4 @@ public void adicionarCliente2(Cliente cliente){
   }
   */
 
-  public void salvarLoja(Loja loja) throws IOException {
-    Gson gson = new GsonBuilder().setPrettyPrinting().create();
-    FileWriter writer = new FileWriter("loja.json");
-    gson.toJson(loja, writer);
-    writer.close();
-  }
 }
